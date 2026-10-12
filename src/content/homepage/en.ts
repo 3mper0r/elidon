@@ -60,33 +60,6 @@ const homepage = {
       }
     ]
   },
-  "beyond": {
-    "eyebrow": "02 / Beyond the work",
-    "heading": "A wider perspective.",
-    "introduction": "Movement and creative exploration. Two personal pillars alongside engineering."
-  },
-  "fitness": {
-    "eyebrow": "Movement / Discipline",
-    "heading": "Fitness",
-    "description": "An athletic mindset. A space for training, movement, and the discipline of showing up.",
-    "link": "Explore fitness",
-    "media": {
-      "variant": "fitness",
-      "label": "Fitness image placeholder",
-      "caption": "Training & movement / image to be added"
-    }
-  },
-  "creative": {
-    "eyebrow": "Exploration / Expression",
-    "heading": "Creative",
-    "description": "Room to experiment. A space for visual ideas, creative practice, and personal expression.",
-    "link": "Explore creative",
-    "media": {
-      "variant": "creative",
-      "label": "Creative image placeholder",
-      "caption": "Creative work / image to be added"
-    }
-  },
   "contact": {
     "eyebrow": "03 / Get in touch",
     "heading": "Start a conversation.",

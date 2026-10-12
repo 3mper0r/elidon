@@ -4,14 +4,14 @@ import { localizedPath } from "@/lib/i18n/locales";
 import { Container } from "./container";
 import { EditorialLink } from "./editorial/editorial-link";
 import { Media } from "./editorial/media";
-import { PillarPreview } from "./editorial/pillar-preview";
+import { ThreePillars } from "./editorial/three-pillars";
 import { SectionHeading } from "./editorial/section-heading";
 import styles from "./editorial/editorial.module.css";
 
 export async function Homepage() {
   const content = await getHomepageContent();
   const locale = await getLocale();
-  const { hero, engineering, beyond, contact } = content;
+  const { hero, engineering, contact } = content;
 
   return (
     <>
@@ -76,17 +76,7 @@ export async function Homepage() {
         </Container>
       </section>
 
-      <section aria-labelledby="beyond-heading" className={`${styles["editorial-section"]} ${styles["beyond-intro"]}`}>
-        <Container>
-          <SectionHeading id="beyond-heading" eyebrow={beyond.eyebrow} heading={beyond.heading} description={beyond.introduction} />
-        </Container>
-      </section>
-      <section aria-labelledby="fitness-heading" className={`${styles["editorial-section"]} ${styles["pillar-section"]}`}>
-        <Container><PillarPreview id="fitness-heading" content={content.fitness} href={localizedPath(locale, "fitness")} /></Container>
-      </section>
-      <section aria-labelledby="creative-heading" className={`${styles["editorial-section"]} ${styles["pillar-section"]}`}>
-        <Container><PillarPreview id="creative-heading" content={content.creative} href={localizedPath(locale, "creative")} reverse /></Container>
-      </section>
+      <ThreePillars />
 
       <section aria-labelledby="contact-heading" className={`${styles["editorial-section"]} ${styles["contact-section"]}`}>
         <Container className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-end">

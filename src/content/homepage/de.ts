@@ -60,33 +60,6 @@ const homepage = {
       }
     ]
   },
-  "beyond": {
-    "eyebrow": "02 / Neben der Arbeit",
-    "heading": "Eine weitere Perspektive.",
-    "introduction": "Bewegung und kreative Entdeckungen. Zwei persönliche Säulen neben dem Engineering."
-  },
-  "fitness": {
-    "eyebrow": "Bewegung / Disziplin",
-    "heading": "Fitness",
-    "description": "Eine sportliche Einstellung. Raum für Training, Bewegung und die Disziplin, dranzubleiben.",
-    "link": "Fitness entdecken",
-    "media": {
-      "variant": "fitness",
-      "label": "Fitnessbild-Platzhalter",
-      "caption": "Training & Bewegung / Bild folgt"
-    }
-  },
-  "creative": {
-    "eyebrow": "Entdecken / Ausdruck",
-    "heading": "Kreatives",
-    "description": "Raum zum Experimentieren. Für visuelle Ideen, kreative Arbeit und persönlichen Ausdruck.",
-    "link": "Kreatives entdecken",
-    "media": {
-      "variant": "creative",
-      "label": "Kreativbild-Platzhalter",
-      "caption": "Kreative Arbeit / Bild folgt"
-    }
-  },
   "contact": {
     "eyebrow": "03 / Kontakt",
     "heading": "Ins Gespräch kommen.",

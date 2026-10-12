@@ -41,6 +41,31 @@ const dictionary = {
       "heading": "Kontakt",
       "description": "Ein Ort für zukünftige Gespräche und berufliche Anfragen."
     }
+  },
+  "threePillars": {
+    "eyebrow": "02 / Drei Säulen",
+    "heading": "Arbeit. Bewegung. Ausdruck.",
+    "description": "Engineering im Mittelpunkt. Fitness und kreative Entdeckungen ergänzen es. Drei Perspektiven, ein persönlicher Ansatz.",
+    "cards": {
+      "engineering": {
+        "title": "Engineering",
+        "description": "Berufliche Erfahrung, technische Perspektiven und ausgewählte Softwareprojekte.",
+        "link": "Engineering entdecken",
+        "mediaLabel": "Engineeringbild-Platzhalter"
+      },
+      "fitness": {
+        "title": "Fitness",
+        "description": "Training, Bewegung und die Disziplin, dranzubleiben.",
+        "link": "Fitness entdecken",
+        "mediaLabel": "Fitnessbild-Platzhalter"
+      },
+      "creative": {
+        "title": "Kreatives",
+        "description": "Visuelle Ideen, kreative Arbeit und Raum zum Experimentieren.",
+        "link": "Kreatives entdecken",
+        "mediaLabel": "Kreativbild-Platzhalter"
+      }
+    }
   }
 } satisfies Dictionary;
 

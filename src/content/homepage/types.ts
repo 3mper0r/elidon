@@ -1,16 +1,8 @@
 export type EditorialMedia = {
-  variant: "project" | "fitness" | "creative";
+  variant: "project";
   label: string;
   caption: string;
   image?: { src: `/${string}`; alt: string };
-};
-
-export type PillarPreviewContent = {
-  eyebrow: string;
-  heading: string;
-  description: string;
-  link: string;
-  media: EditorialMedia;
 };
 
 export type HomepageContent = {
@@ -32,8 +24,5 @@ export type HomepageContent = {
     projectStatus: string;
     projects: { id: string; title: string; description: string; media: EditorialMedia }[];
   };
-  beyond: { eyebrow: string; heading: string; introduction: string };
-  fitness: PillarPreviewContent;
-  creative: PillarPreviewContent;
   contact: { eyebrow: string; heading: string; description: string; link: string };
 };

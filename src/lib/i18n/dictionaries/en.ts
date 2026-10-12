@@ -41,6 +41,31 @@ const dictionary = {
       "heading": "Contact",
       "description": "A place for future conversations and professional enquiries."
     }
+  },
+  "threePillars": {
+    "eyebrow": "02 / Three pillars",
+    "heading": "Work. Movement. Expression.",
+    "description": "Engineering at the core. Fitness and creative exploration alongside it. Three perspectives, one personal approach.",
+    "cards": {
+      "engineering": {
+        "title": "Engineering",
+        "description": "Professional experience, technical perspective, and selected software projects.",
+        "link": "Explore engineering",
+        "mediaLabel": "Engineering image placeholder"
+      },
+      "fitness": {
+        "title": "Fitness",
+        "description": "Training, movement, and the discipline of showing up.",
+        "link": "Explore fitness",
+        "mediaLabel": "Fitness image placeholder"
+      },
+      "creative": {
+        "title": "Creative",
+        "description": "Visual ideas, creative practice, and room to experiment.",
+        "link": "Explore creative",
+        "mediaLabel": "Creative image placeholder"
+      }
+    }
   }
 } satisfies Dictionary;
 

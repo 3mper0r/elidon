@@ -42,7 +42,7 @@ uses a button with an accessible name, expanded state, and controlled list.
 Design tokens live in `src/app/globals.css`. The layout provides responsive
 containers, visible keyboard focus, a skip link, and a single main landmark.
 The homepage provides a typography-first hero, engineering experience and expertise slots,
-featured project slots, fitness and creative previews, and a contact section.
+featured project slots, a three-pillar editorial section, and a contact section.
 Professional details remain explicitly labeled placeholders. Business features
 are deferred.
 
@@ -60,8 +60,31 @@ flow, so they cannot overlap surrounding page sections.
 Editorial components and their directly imported CSS Module live in
 `src/components/editorial`. Tailwind, palette tokens, and site-wide accessibility
 styles remain in `src/app/globals.css`. The headline uses `clamp()`; experience
-and projects form two columns from 768px, and Fitness/Creative use alternating
-text/media layouts. All content stays in document flow, with no fixed section
+and projects form two columns from 768px. The three-pillar section stacks on
+mobile, uses two columns from 768px, and three columns from 1024px. All content stays in document flow, with no fixed section
 heights. Small hover transitions and smooth anchor scrolling run only with
-`prefers-reduced-motion: no-preference`; there are no scroll-reveal animations. Mobile navigation supports
+`prefers-reduced-motion: no-preference`; there are no scroll-reveal animations.
+Mobile navigation supports
 Escape to close and return focus to the menu button.
+
+
+## Three pillars
+
+`src/components/editorial/three-pillars.tsx` renders Engineering, Fitness, and
+Creative directly after Selected Projects. Each card links to its localized page.
+All new section copy and placeholder labels are in the existing English/German
+`threePillars` dictionaries under `src/lib/i18n/dictionaries`.
+
+Add real images under `public/images` and configure `src/content/pillars.ts`:
+
+```ts
+engineering: {
+  image: {
+    src: "/images/engineering.jpg",
+    alt: { en: "Descriptive English alt text", de: "Deutscher Alternativtext" },
+  },
+},
+```
+
+All three media slots keep a 3:4 aspect ratio and use `next/image` with `object-fit:
+cover` when images are configured. Replacing placeholders preserves frame size.
