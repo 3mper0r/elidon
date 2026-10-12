@@ -19,10 +19,10 @@ to Google.
 
 ## Structure
 
-- `src/app/[lang]`: locale root layout and six explicit placeholder routes.
+- `src/app/[lang]`: locale root layout, the editorial homepage, and five placeholder routes.
 - `src/components`: shared layout, navigation, and placeholder components.
 - `src/lib/i18n`: supported locales, typed dictionaries, and page metadata.
-- `src/content`: reserved for future portfolio content.
+- `src/content`: typed bilingual homepage content and replaceable media definitions.
 
 English is the default: `/` permanently redirects to `/en`. Both `/en` and `/de`
 provide home, engineering, fitness, creative, about, and contact pages. Unsupported
@@ -41,5 +41,27 @@ uses a button with an accessible name, expanded state, and controlled list.
 
 Design tokens live in `src/app/globals.css`. The layout provides responsive
 containers, visible keyboard focus, a skip link, and a single main landmark.
-The homepage remains a minimal placeholder; portfolio content and business
-features are intentionally deferred.
+The homepage provides a typography-first hero, engineering experience and expertise slots,
+featured project slots, fitness and creative previews, and a contact section.
+Professional details remain explicitly labeled placeholders. Business features
+are deferred.
+
+## Replacing homepage content
+
+Edit `src/content/homepage/en.ts` and `de.ts`; both satisfy `HomepageContent`.
+The hero uses two translated headline lines and deliberately has no portrait.
+Replace experience, expertise, and project placeholders with verified details.
+For each media slot, add a local asset under `public/` and set
+`image: { src: "/images/training.jpg", alt: "Descriptive translated alt text" }`.
+Update the caption too. The reusable media component uses `next/image`, fixed
+aspect ratios and responsive sizes. Captions sit beneath the image frame in normal
+flow, so they cannot overlap surrounding page sections.
+
+Editorial components and their directly imported CSS Module live in
+`src/components/editorial`. Tailwind, palette tokens, and site-wide accessibility
+styles remain in `src/app/globals.css`. The headline uses `clamp()`; experience
+and projects form two columns from 768px, and Fitness/Creative use alternating
+text/media layouts. All content stays in document flow, with no fixed section
+heights. Small hover transitions and smooth anchor scrolling run only with
+`prefers-reduced-motion: no-preference`; there are no scroll-reveal animations. Mobile navigation supports
+Escape to close and return focus to the menu button.

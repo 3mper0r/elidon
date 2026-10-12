@@ -1,4 +1,4 @@
-import { PlaceholderPage } from "@/components/placeholder-page";
+import { Homepage } from "@/components/homepage";
 import { getPageMetadata } from "@/lib/i18n/metadata";
 
 export function generateMetadata() {
@@ -6,5 +6,5 @@ export function generateMetadata() {
 }
 
 export default function Page() {
-  return <PlaceholderPage page="home" />;
+  return <Homepage />;
 }
