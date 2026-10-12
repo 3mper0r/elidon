@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
+import { defaultLocale } from "./src/lib/i18n/locales";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  redirects() {
+    return [{ source: "/", destination: `/${defaultLocale}`, permanent: true }];
+  },
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
