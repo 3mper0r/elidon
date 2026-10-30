@@ -4,28 +4,60 @@ const homepage = {
   "hero": {
     "eyebrow": "Elidon / Software engineer",
     "heading": [
-      "Engineering first.",
-      "More beyond."
+      "Software engineering.",
+      "Built with intent."
     ],
-    "introduction": "An experienced software engineer with a creative perspective and an athletic mindset. A personal space for the work — and the life around it.",
-    "primaryLink": "Explore engineering",
-    "secondaryLink": "About me",
-    "scrollLink": "Discover the work"
+    "introduction": "An experienced software engineer. This portfolio brings together selected work, technical decisions, and professional experience for teams building software that matters.",
+    "primaryLink": "View selected work",
+    "secondaryLink": "Engineering approach",
+    "scrollLink": "Explore the work"
   },
-  "engineering": {
-    "eyebrow": "01 / Professional focus",
-    "heading": "Engineering,\nwith perspective.",
-    "introduction": "Professional experience, technical expertise, and selected work. A closer look at the engineering behind the portfolio.",
-    "link": "More on engineering",
-    "details": [
+  "work": {
+    "eyebrow": "01 / Selected work",
+    "heading": "The work.\nThe decisions behind it.",
+    "introduction": "Two case-study slots, ready for real engineering work. Project details and imagery will be added after verification.",
+    "status": "Content placeholders / case studies to follow",
+    "detailLink": "View case-study placeholder",
+    "backLink": "Back to selected work",
+    "roleLabel": "Role & contribution",
+    "technologyLabel": "Technical context",
+    "outcomeLabel": "Outcomes & trade-offs",
+    "projects": [
       {
-        "title": "Professional experience",
-        "description": "Experience placeholder — add verified roles, organisations, and dates.",
-        "items": [
-          "Role & organisation to be added",
-          "Responsibilities & scope to be added"
-        ]
+        "id": "01",
+        "title": "Case study 01 / Placeholder",
+        "description": "Project placeholder — add the problem, your contribution, and a verified outcome.",
+        "media": {
+          "variant": "project",
+          "label": "Project image placeholder",
+          "caption": "01 / Project visual to be added"
+        },
+        "slug": "case-study-01",
+        "role": "Role & contribution — to be added",
+        "technologies": "Stack & technical decisions — to be added",
+        "outcome": "Verified outcomes & trade-offs — to be added"
       },
+      {
+        "id": "02",
+        "title": "Case study 02 / Placeholder",
+        "description": "Project placeholder — add the context, technical decisions, and a verified outcome.",
+        "media": {
+          "variant": "project",
+          "label": "Project image placeholder",
+          "caption": "02 / Project visual to be added"
+        },
+        "slug": "case-study-02",
+        "role": "Role & contribution — to be added",
+        "technologies": "Stack & technical decisions — to be added",
+        "outcome": "Verified outcomes & trade-offs — to be added"
+      }
+    ]
+  },
+  "expertise": {
+    "eyebrow": "02 / Engineering expertise",
+    "heading": "Technical depth.\nClear priorities.",
+    "introduction": "Expertise placeholder — verified disciplines, technologies, and practical examples will follow.",
+    "details": [
       {
         "title": "Technical expertise",
         "description": "Expertise placeholder — add the technologies and disciplines used in practice.",
@@ -34,37 +66,34 @@ const homepage = {
           "Engineering strengths to be added"
         ]
       }
-    ],
-    "projectsHeading": "Selected projects",
-    "projectStatus": "Portfolio placeholders / details to follow",
-    "projects": [
+    ]
+  },
+  "experience": {
+    "eyebrow": "03 / Professional experience",
+    "heading": "Experience,\nin context.",
+    "introduction": "Career details will be added with verified roles, organisations, and dates.",
+    "entries": [
       {
-        "id": "01",
-        "title": "Featured project 01",
-        "description": "Project placeholder — add the problem, your contribution, and a verified outcome.",
-        "media": {
-          "variant": "project",
-          "label": "Project image placeholder",
-          "caption": "01 / Project visual to be added"
-        }
-      },
-      {
-        "id": "02",
-        "title": "Featured project 02",
-        "description": "Project placeholder — add the context, technical decisions, and a verified outcome.",
-        "media": {
-          "variant": "project",
-          "label": "Project image placeholder",
-          "caption": "02 / Project visual to be added"
-        }
+        "title": "Role & organisation / Placeholder",
+        "period": "Dates to be added",
+        "description": "Experience placeholder — add verified roles, organisations, and dates.",
+        "items": [
+          "Responsibilities & scope — to be added",
+          "Verified contributions & outcomes — to be added"
+        ]
       }
     ]
   },
+  "about": {
+    "eyebrow": "04 / About & engineering approach",
+    "heading": "How I approach\nthe work.",
+    "introduction": "Approach placeholder — add a personal account of problem solving, technical trade-offs, collaboration, and software quality, supported by real examples."
+  },
   "contact": {
-    "eyebrow": "03 / Get in touch",
-    "heading": "Start a conversation.",
-    "description": "For conversations about engineering, ideas, and the work ahead.",
-    "link": "Contact me"
+    "eyebrow": "05 / Contact",
+    "heading": "Let’s talk engineering.",
+    "description": "For engineering roles, technical collaboration, and conversations with product teams.",
+    "link": "Get in touch"
   }
 } satisfies HomepageContent;
 

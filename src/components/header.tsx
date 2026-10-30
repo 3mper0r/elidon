@@ -11,7 +11,7 @@ export async function Header() {
   return (
     <header className="relative z-30 border-b border-secondary/20">
       <Container className="flex items-center justify-between gap-4 py-5 lg:gap-8 lg:py-7">
-        <Link href={localizedPath(locale)} aria-label={`Elidon — ${dictionary.navigation.home}`} className="flex min-h-11 items-center text-2xl font-medium tracking-tight">elidon.</Link>
+        <Link href={localizedPath(locale)} aria-label={`Elidon builds — ${dictionary.navigation.home}`} className="flex min-h-11 items-center text-2xl font-medium tracking-tight text-teal-300">elidon builds</Link>
         <Navigation locale={locale} labels={dictionary.navigation} accessibility={dictionary.accessibility} />
       </Container>
     </header>

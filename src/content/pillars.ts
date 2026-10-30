@@ -13,6 +13,14 @@ type PillarMedia = {
 // Add local images and both translated alt texts here when real assets are ready.
 export const pillarMedia: Record<PillarKey, PillarMedia> = {
   engineering: {},
-  fitness: {},
+  fitness: {
+    image: {
+      src: "/images/fitness-training.png",
+      alt: {
+        en: "Athlete standing beside a loaded barbell in a gym.",
+        de: "Sportler neben einer beladenen Langhantel im Fitnessstudio.",
+      },
+    },
+  },
   creative: {},
 };

@@ -2,6 +2,8 @@ import type { Dictionary } from "../types";
 
 const dictionary = {
   "navigation": {
+    "work": "Work",
+    "experience": "Experience",
     "home": "Home",
     "engineering": "Engineering",
     "fitness": "Fitness",
@@ -15,11 +17,11 @@ const dictionary = {
     "menu": "Menu",
     "skipToContent": "Skip to content"
   },
-  "footer": "Engineering. Movement. Expression.",
+  "footer": "Software engineering. Thoughtful execution.",
   "pages": {
     "home": {
       "heading": "Elidon",
-      "description": "Software engineer with a creative perspective and an athletic mindset."
+      "description": "Experienced software engineer — selected work, technical expertise, and professional experience."
     },
     "engineering": {
       "heading": "Engineering",
@@ -35,7 +37,7 @@ const dictionary = {
     },
     "about": {
       "heading": "About",
-      "description": "The person behind the engineering, movement, and creative work."
+      "description": "Software engineering, collaboration, and the approach behind the work."
     },
     "contact": {
       "heading": "Contact",

@@ -5,24 +5,20 @@ export type EditorialMedia = {
   image?: { src: `/${string}`; alt: string };
 };
 
+type ContentSection = { eyebrow: string; heading: string; introduction: string };
 export type HomepageContent = {
-  hero: {
-    eyebrow: string;
-    heading: [string, string];
-    introduction: string;
-    primaryLink: string;
-    secondaryLink: string;
-    scrollLink: string;
+  hero: { eyebrow: string; heading: [string, string]; introduction: string; primaryLink: string; secondaryLink: string; scrollLink: string };
+  work: ContentSection & {
+    status: string;
+    detailLink: string;
+    backLink: string;
+    roleLabel: string;
+    technologyLabel: string;
+    outcomeLabel: string;
+    projects: { id: string; slug: string; title: string; description: string; role: string; technologies: string; outcome: string; media: EditorialMedia }[];
   };
-  engineering: {
-    eyebrow: string;
-    heading: string;
-    introduction: string;
-    link: string;
-    details: { title: string; description: string; items: string[] }[];
-    projectsHeading: string;
-    projectStatus: string;
-    projects: { id: string; title: string; description: string; media: EditorialMedia }[];
-  };
+  expertise: ContentSection & { details: { title: string; description: string; items: string[] }[] };
+  experience: ContentSection & { entries: { title: string; period: string; description: string; items: string[] }[] };
+  about: ContentSection;
   contact: { eyebrow: string; heading: string; description: string; link: string };
 };

@@ -2,6 +2,8 @@ import type { Dictionary } from "../types";
 
 const dictionary = {
   "navigation": {
+    "work": "Projekte",
+    "experience": "Erfahrung",
     "home": "Start",
     "engineering": "Engineering",
     "fitness": "Fitness",
@@ -15,11 +17,11 @@ const dictionary = {
     "menu": "Menü",
     "skipToContent": "Zum Inhalt springen"
   },
-  "footer": "Engineering. Bewegung. Ausdruck.",
+  "footer": "Softwareentwicklung. Mit klarem Anspruch.",
   "pages": {
     "home": {
       "heading": "Elidon",
-      "description": "Softwareentwickler mit kreativer Perspektive und sportlicher Einstellung."
+      "description": "Erfahrener Softwareentwickler — ausgewählte Projekte, technische Expertise und berufliche Erfahrung."
     },
     "engineering": {
       "heading": "Engineering",
@@ -35,7 +37,7 @@ const dictionary = {
     },
     "about": {
       "heading": "Über mich",
-      "description": "Der Mensch hinter der Softwareentwicklung, dem Sport und der kreativen Arbeit."
+      "description": "Softwareentwicklung, Zusammenarbeit und die Arbeitsweise hinter den Projekten."
     },
     "contact": {
       "heading": "Kontakt",

@@ -7,12 +7,13 @@ export async function getPageMetadata(page: PageKey): Promise<Metadata> {
   const dictionary = await getDictionary();
   const { heading, description } = dictionary.pages[page];
   const title = page === "home"
-    ? `Elidon | ${dictionary.navigation.engineering}, ${dictionary.navigation.fitness} & ${dictionary.navigation.creative}`
+    ? `Elidon | ${locale === "en" ? "Software Engineer" : "Softwareentwickler"}`
     : `${heading} | Elidon`;
 
   return {
     title,
     description,
+    ...(page === "fitness" || page === "creative" ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: localizedPath(locale, page),
       languages: {

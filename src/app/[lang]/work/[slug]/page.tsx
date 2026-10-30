@@ -1,0 +1,49 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getHomepageContent } from "@/content/homepage";
+import { getLocale } from "@/lib/i18n/dictionaries";
+import { Container } from "@/components/container";
+import { Media } from "@/components/editorial/media";
+import { EditorialLink } from "@/components/editorial/editorial-link";
+import styles from "@/components/editorial/editorial.module.css";
+
+async function getProject(slug: string) {
+  const { work } = await getHomepageContent();
+  const project = work.projects.find((entry) => entry.slug === slug);
+  if (!project) notFound();
+  return { work, project };
+}
+
+export async function generateMetadata({ params }: PageProps<"/[lang]/work/[slug]">): Promise<Metadata> {
+  const { slug } = await params;
+  const { project } = await getProject(slug);
+  const locale = await getLocale();
+  const path = `/${locale}/work/${slug}`;
+  return {
+    title: `${project.title} | Elidon`,
+    description: project.description,
+    robots: { index: false, follow: true },
+    alternates: { canonical: path, languages: { en: `/en/work/${slug}`, de: `/de/work/${slug}`, "x-default": `/en/work/${slug}` } },
+    openGraph: { title: `${project.title} | Elidon`, description: project.description, url: path, type: "article", locale: locale === "en" ? "en_US" : "de_DE" },
+  };
+}
+
+export default async function Page({ params }: PageProps<"/[lang]/work/[slug]">) {
+  const { slug } = await params;
+  const { work, project } = await getProject(slug);
+  const locale = await getLocale();
+  return (
+    <Container className="py-20 sm:py-28 lg:py-36">
+      <p className={styles.eyebrow}>{work.status}</p>
+      <h1 className="mt-6 max-w-4xl text-4xl font-medium tracking-tight sm:text-6xl">{project.title}</h1>
+      <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary">{project.description}</p>
+      <div className="mt-12 max-w-4xl"><Media media={project.media} /></div>
+      <dl className="my-12 grid gap-8 sm:grid-cols-2">
+        {[[work.roleLabel, project.role], [work.technologyLabel, project.technologies], [work.outcomeLabel, project.outcome]].map(([label, value]) => (
+          <div key={label} className={styles["detail-panel"]}><dt className="text-xl">{label}</dt><dd className={styles["detail-description"]}>{value}</dd></div>
+        ))}
+      </dl>
+      <EditorialLink href={`/${locale}#work`}>{work.backLink}</EditorialLink>
+    </Container>
+  );
+}
