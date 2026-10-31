@@ -1,21 +1,30 @@
-# Cloudflare Pages deployment
+# Cloudflare static hosting deployment
 
-## Publish the preview
+## Publish the preview (Workers Static Assets)
 
-1. Sign in to Cloudflare and open **Workers & Pages**.
-2. Create a **Pages** project, choose **Import an existing Git repository**, and
-   connect `3mper0r/elidon`. Grant access to this repository only.
-3. Set the production branch to `main` and use these build settings:
-   - Framework: **Next.js (Static HTML Export)**
-   - Build command: `npm run build`
-   - Output directory: `out`
-   - Root directory: repository root (leave blank)
-   - Node version: `22` (also specified in `.node-version`)
-4. Deploy and check the generated `*.pages.dev` URL before changing DNS.
+The existing Cloudflare project is a Worker named `elidon`. It serves only static
+files from `out`, using `wrangler.jsonc`. No server-side Worker code, OpenNext
+adapter, server bundle, or cache bindings are needed.
 
-No API keys, database, paid Workers plan, or runtime environment variables are
-required. Source PDFs and `private-documents` must remain excluded from Git and
-must never be copied to `public` or `out`.
+In the project's **Settings → Build**, connect `3mper0r/elidon` and set:
+
+- Production branch: `main`
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Root directory: repository root (leave blank)
+- Node version: `22` (also specified in `.node-version`)
+
+Retry deployment using the latest source commit. Wrangler reads the checked-in
+configuration and uploads `out`, without the framework auto-setup that attempts
+to migrate Next.js to OpenNext. Do not set the asset directory to `.next`.
+
+Check the assigned `*.workers.dev` address before changing DNS. Static asset
+requests are free under Cloudflare's static asset pricing. No database or runtime
+environment variables are required. Keep all source PDFs and `private-documents`
+out of Git and never copy them to `public` or `out`.
+
+For an alternative Pages project, use the **Next.js (Static HTML Export)** preset,
+`npm run build`, and output directory `out`; Pages does not use a deploy command.
 
 ## Validate the build
 
@@ -31,7 +40,7 @@ Images are served as static assets without the Next.js image optimization server
 
 ## Connect elidon.de after preview verification
 
-Cloudflare Pages requires the apex domain `elidon.de` to use Cloudflare nameservers.
+Connecting the Worker to `elidon.de` requires an active Cloudflare DNS zone.
 The domain can remain registered and renewed at IONOS.
 
 1. Export or record the existing IONOS DNS zone before changing nameservers.
@@ -43,14 +52,17 @@ The domain can remain registered and renewed at IONOS.
    instructions if a DS record is active.
 5. Use the exact two nameservers assigned by Cloudflare in IONOS's nameserver
    settings. Do not transfer or cancel the domain or mail contract.
-6. Once the Cloudflare zone is active, open the Pages project's **Custom domains**,
-   add `elidon.de`, and complete its DNS/HTTPS activation. Add `www.elidon.de` if
-   desired through that same screen, following the provided record instructions.
+6. Once the Cloudflare zone is active, open the Worker's **Settings → Domains &
+   Routes → Add → Custom Domain**, add `elidon.de`, and complete activation. Add
+   `www.elidon.de` if desired through that same screen.
 7. Verify HTTPS, both languages, and inbound/outbound email for `info@elidon.de`.
 
-Do not guess mail targets, nameserver names, or the Pages CNAME target: these come
+Do not guess mail targets, nameserver names, or hosting record targets: these come
 from the account's existing DNS and the deployed project.
 
 References:
 - https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/
 - https://developers.cloudflare.com/pages/configuration/custom-domains/
+
+- https://developers.cloudflare.com/workers/static-assets/
+- https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/

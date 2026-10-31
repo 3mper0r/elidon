@@ -18,9 +18,9 @@ to Google.
 
 ## Hosting
 
-The portfolio is configured for static export on Cloudflare Pages. `npm run build`
+The portfolio is configured for static export on Cloudflare. `npm run build`
 produces the `out` directory, including both languages and all project pages.
-The `/` redirect is handled by `public/_redirects`, with `public/index.html` as a
+`wrangler.jsonc` deploys only `out` to Workers Static Assets. The `/` redirect is handled by `public/_redirects`, with `public/index.html` as a
 fallback. Use Node 22. `next start` is for server builds and is not used here.
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for preview setup and the IONOS domain connection.
