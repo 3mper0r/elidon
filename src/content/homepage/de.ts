@@ -82,15 +82,18 @@ const homepage = {
     ]
   },
   "about": {
-    "eyebrow": "04 / Über mich & Engineering-Ansatz",
-    "heading": "Wie ich an\nSoftware herangehe.",
-    "introduction": "Ansatz-Platzhalter — persönliche Arbeitsweise bei Problemlösung, technischen Abwägungen, Zusammenarbeit und Softwarequalität anhand realer Beispiele ergänzen."
+    "eyebrow": "04 / Über mich",
+    "heading": "Digitale Lösungen.\nFür Unternehmen entwickelt.",
+    "introduction": "Ich bin Fullstack-Entwickler mit Sitz in Deutschland. Ich entwickle digitale Lösungen für Unternehmen und verbinde durchdachte Benutzeroberflächen mit den passenden Backend-Systemen und der Cloud-Infrastruktur dahinter. Mein Fokus liegt darauf, geschäftliche Anforderungen in nützliche, zuverlässige Software zu übersetzen.",
+    "availability": "Ich bin offen für Festanstellungen, freiberufliche Projekte und Kooperationen — von konkreten Herausforderungen bis zur gemeinsamen Entwicklung ambitionierter Produkte.",
+    "technologyLabel": "Technologien, mit denen ich arbeite"
   },
   "contact": {
     "eyebrow": "05 / Kontakt",
-    "heading": "Über Engineering sprechen.",
-    "description": "Für Engineering-Positionen, technische Zusammenarbeit und Gespräche mit Produktteams.",
-    "link": "Kontakt aufnehmen"
+    "heading": "Eine Herausforderung?\nEntwickeln wir die Lösung.",
+    "description": "Du suchst einen Fullstack-Entwickler für dein Team oder dein nächstes Projekt? Ich bin in Deutschland ansässig und offen für Festanstellungen, freiberufliche Arbeit und Kooperationen. Schreib mir, was du vorhast.",
+    "link": "E-Mail schreiben",
+    "email": "info@elidon.de"
   }
 } satisfies HomepageContent;
 

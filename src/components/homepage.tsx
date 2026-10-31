@@ -1,6 +1,6 @@
 import { getHomepageContent } from "@/content/homepage";
 import { getLocale } from "@/lib/i18n/dictionaries";
-import { localizedPath } from "@/lib/i18n/locales";
+import { AboutSection, ContactSection } from "./profile-sections";
 import { EngineeringIcon, HeroArt } from "./hero-art";
 import { Container } from "./container";
 import { EditorialLink } from "./editorial/editorial-link";
@@ -101,18 +101,8 @@ export async function Homepage() {
           </div>
         </Container>
       </section>
-      <section id="about" aria-labelledby="about-heading" className={styles["editorial-section"]}>
-        <Container><SectionHeading id="about-heading" eyebrow={about.eyebrow} heading={about.heading} description={about.introduction} /></Container>
-      </section>
-      <section id="contact" aria-labelledby="contact-heading" className={`${styles["editorial-section"]} ${styles["contact-section"]}`}>
-        <Container className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-end">
-          <SectionHeading id="contact-heading" eyebrow={contact.eyebrow} heading={contact.heading} />
-          <div className="lg:pb-2">
-            <p className="max-w-md text-lg leading-relaxed text-secondary">{contact.description}</p>
-            <div className="mt-8"><EditorialLink href={localizedPath(locale, "contact")} filled>{contact.link}</EditorialLink></div>
-          </div>
-        </Container>
-      </section>
+      <AboutSection content={about} />
+      <ContactSection content={contact} />
     </>
   );
 }

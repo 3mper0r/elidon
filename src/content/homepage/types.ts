@@ -19,6 +19,6 @@ export type HomepageContent = {
   };
   expertise: ContentSection & { details: { title: string; description: string; items: string[] }[] };
   experience: ContentSection & { entries: { title: string; period: string; description: string; items: string[] }[] };
-  about: ContentSection;
-  contact: { eyebrow: string; heading: string; description: string; link: string };
+  about: ContentSection & { availability: string; technologyLabel: string };
+  contact: { eyebrow: string; heading: string; description: string; link: string; email: string };
 };

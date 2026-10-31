@@ -85,15 +85,18 @@ const homepage = {
     ]
   },
   "about": {
-    "eyebrow": "04 / About & engineering approach",
-    "heading": "How I approach\nthe work.",
-    "introduction": "Approach placeholder — add a personal account of problem solving, technical trade-offs, collaboration, and software quality, supported by real examples."
+    "eyebrow": "04 / About me",
+    "heading": "Digital solutions.\nBuilt for business.",
+    "introduction": "I’m a full stack developer based in Germany. I build digital solutions for companies, connecting thoughtful interfaces with the backend systems and cloud infrastructure behind them. My focus is turning business needs into useful, reliable software.",
+    "availability": "I’m open to full-time roles, freelance projects, and collaborations — from solving a specific challenge to building an ambitious product together.",
+    "technologyLabel": "Technologies I work with"
   },
   "contact": {
-    "eyebrow": "05 / Contact",
-    "heading": "Let’s talk engineering.",
-    "description": "For engineering roles, technical collaboration, and conversations with product teams.",
-    "link": "Get in touch"
+    "eyebrow": "05 / Get in touch",
+    "heading": "Have a challenge?\nLet’s build the solution.",
+    "description": "Looking for a full stack developer for your team or your next project? I’m based in Germany and open to roles, freelance work, and collaborations. Tell me what you have in mind.",
+    "link": "Send me an email",
+    "email": "info@elidon.de"
   }
 } satisfies HomepageContent;
 

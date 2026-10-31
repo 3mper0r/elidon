@@ -37,11 +37,11 @@ const dictionary = {
     },
     "about": {
       "heading": "About",
-      "description": "Software engineering, collaboration, and the approach behind the work."
+      "description": "Full stack developer based in Germany, building digital solutions for companies with React, Next.js, Node.js, Python, and AWS."
     },
     "contact": {
       "heading": "Contact",
-      "description": "A place for future conversations and professional enquiries."
+      "description": "Contact Elidon at info@elidon.de for full stack roles, freelance projects, and collaborations."
     }
   },
   "threePillars": {

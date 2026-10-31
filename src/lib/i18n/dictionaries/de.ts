@@ -37,11 +37,11 @@ const dictionary = {
     },
     "about": {
       "heading": "Über mich",
-      "description": "Softwareentwicklung, Zusammenarbeit und die Arbeitsweise hinter den Projekten."
+      "description": "Fullstack-Entwickler in Deutschland: digitale Lösungen für Unternehmen mit React, Next.js, Node.js, Python und AWS."
     },
     "contact": {
       "heading": "Kontakt",
-      "description": "Ein Ort für zukünftige Gespräche und berufliche Anfragen."
+      "description": "Kontaktiere Elidon unter info@elidon.de für Fullstack-Positionen, freiberufliche Projekte und Kooperationen."
     }
   },
   "threePillars": {
