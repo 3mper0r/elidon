@@ -15,10 +15,10 @@ export type HomepageContent = {
     roleLabel: string;
     technologyLabel: string;
     outcomeLabel: string;
-    projects: { id: string; slug: string; title: string; description: string; role: string; technologies: string; outcome: string; media: EditorialMedia }[];
+    projects: { id: string; slug: string; title: string; description: string; role: string; technologies: string; outcome?: string; media?: EditorialMedia; caseStudy?: { heading: string; body: string }[] }[];
   };
-  expertise: ContentSection & { details: { title: string; description: string; items: string[] }[] };
-  experience: ContentSection & { entries: { title: string; period: string; description: string; items: string[] }[] };
+  expertise: ContentSection & { details: { title: string; items: string[] }[] };
+  experience: ContentSection & { entries: { title: string; period?: string; description: string; items: string[] }[] };
   about: ContentSection & { availability: string; technologyLabel: string };
   contact: { eyebrow: string; heading: string; description: string; link: string; email: string };
 };

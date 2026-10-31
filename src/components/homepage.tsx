@@ -54,7 +54,7 @@ export async function Homepage() {
           <div className={styles["project-grid"]}>
             {work.projects.map((project) => (
               <article key={project.id} aria-labelledby={`project-${project.id}`} className={styles["project-preview"]}>
-                <Media media={project.media} />
+                {project.media?.image && <Media media={project.media} />}
                 <div className={styles["project-copy"]}>
                   <span className="pt-1 text-sm text-secondary" aria-hidden="true">{project.id}</span>
                   <div>
@@ -64,7 +64,7 @@ export async function Homepage() {
                       <div><dt>{work.roleLabel}</dt><dd className="mt-1 text-secondary">{project.role}</dd></div>
                       <div><dt>{work.technologyLabel}</dt><dd className="mt-1 text-secondary">{project.technologies}</dd></div>
                     </dl>
-                    <div className="mt-6"><EditorialLink href={`/${locale}/work/${project.slug}`}>{work.detailLink}<span className="sr-only"> — {project.title}</span></EditorialLink></div>
+                    {project.caseStudy && <div className="mt-6"><EditorialLink href={`/${locale}/work/${project.slug}`}>{work.detailLink}<span className="sr-only"> — {project.title}</span></EditorialLink></div>}
                   </div>
                 </div>
               </article>
@@ -79,7 +79,6 @@ export async function Homepage() {
             {expertise.details.map((detail) => (
               <article key={detail.title} className={styles["detail-panel"]}>
                 <h3 className={styles["detail-title"]}>{detail.title}</h3>
-                <p className={styles["detail-description"]}>{detail.description}</p>
                 <ul className={styles["detail-list"]}>{detail.items.map((item) => <li key={item}>{item}</li>)}</ul>
               </article>
             ))}
@@ -92,7 +91,7 @@ export async function Homepage() {
           <div className={styles["engineering-details"]}>
             {experience.entries.map((entry) => (
               <article key={entry.title} className={styles["detail-panel"]}>
-                <p className={styles.eyebrow}>{entry.period}</p>
+                {entry.period && <p className={styles.eyebrow}>{entry.period}</p>}
                 <h3 className={styles["detail-title"]}>{entry.title}</h3>
                 <p className={styles["detail-description"]}>{entry.description}</p>
                 <ul className={styles["detail-list"]}>{entry.items.map((item) => <li key={item}>{item}</li>)}</ul>

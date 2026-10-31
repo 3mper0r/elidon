@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/work/[slug
   return {
     title: `${project.title} | Elidon`,
     description: project.description,
-    robots: { index: false, follow: true },
+    robots: { index: Boolean(project.caseStudy), follow: true },
     alternates: { canonical: path, languages: { en: `/en/work/${slug}`, de: `/de/work/${slug}`, "x-default": `/en/work/${slug}` } },
     openGraph: { title: `${project.title} | Elidon`, description: project.description, url: path, type: "article", locale: locale === "en" ? "en_US" : "de_DE" },
   };
@@ -37,12 +37,18 @@ export default async function Page({ params }: PageProps<"/[lang]/work/[slug]">)
       <p className={styles.eyebrow}>{work.status}</p>
       <h1 className="mt-6 max-w-4xl text-4xl font-medium tracking-tight sm:text-6xl">{project.title}</h1>
       <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary">{project.description}</p>
-      <div className="mt-12 max-w-4xl"><Media media={project.media} /></div>
+      {project.media?.image && <div className="mt-12 max-w-4xl"><Media media={project.media} /></div>}
       <dl className="my-12 grid gap-8 sm:grid-cols-2">
-        {[[work.roleLabel, project.role], [work.technologyLabel, project.technologies], [work.outcomeLabel, project.outcome]].map(([label, value]) => (
+        {[[work.roleLabel, project.role], [work.technologyLabel, project.technologies], [work.outcomeLabel, project.outcome]].filter(([, value]) => value).map(([label, value]) => (
           <div key={label} className={styles["detail-panel"]}><dt className="text-xl">{label}</dt><dd className={styles["detail-description"]}>{value}</dd></div>
         ))}
       </dl>
+      {project.caseStudy && <div className="my-16 grid max-w-3xl gap-12">
+        {project.caseStudy.map((section) => <section key={section.heading}>
+          <h2 className="text-2xl font-medium tracking-tight sm:text-3xl">{section.heading}</h2>
+          <p className="mt-5 leading-relaxed text-secondary sm:text-lg">{section.body}</p>
+        </section>)}
+      </div>}
       <EditorialLink href={`/${locale}#work`}>{work.backLink}</EditorialLink>
     </Container>
   );
