@@ -1,15 +1,11 @@
 import type { NextConfig } from "next";
-import { defaultLocale } from "./src/lib/i18n/locales";
 
 const nextConfig: NextConfig = {
   experimental: {
     agentUpgrade: "security",
   },
-  redirects() {
-    return [{ source: "/", destination: `/${defaultLocale}`, permanent: true }];
-  },
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  images: { unoptimized: true },
   turbopack: {
     rules: {
       // Only global Tailwind input needs this loader. Applying it to CSS Modules

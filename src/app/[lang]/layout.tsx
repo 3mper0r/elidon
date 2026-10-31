@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://elidon.de"),
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }

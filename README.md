@@ -10,81 +10,32 @@ npm run dev
 npm run lint
 npm run typecheck
 npm run build
-npm run start
 ```
 
 `next/font/google` downloads Geist during the build and self-hosts it at runtime.
 The build therefore needs access to Google Fonts; visitors make no font requests
 to Google.
 
+## Hosting
+
+The portfolio is configured for static export on Cloudflare Pages. `npm run build`
+produces the `out` directory, including both languages and all project pages.
+The `/` redirect is handled by `public/_redirects`, with `public/index.html` as a
+fallback. Use Node 22. `next start` is for server builds and is not used here.
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for preview setup and the IONOS domain connection.
+The DNS migration must preserve the existing email records.
+
 ## Structure
 
-- `src/app/[lang]`: locale root layout, the editorial homepage, and five placeholder routes.
-- `src/components`: shared layout, navigation, and placeholder components.
-- `src/lib/i18n`: supported locales, typed dictionaries, and page metadata.
-- `src/content`: typed bilingual homepage content and replaceable media definitions.
+- `src/app/[lang]`: localized homepage, About, Contact, legacy pages, and project pages.
+- `src/components`: responsive layout, hero illustration, navigation, technology icons.
+- `src/lib/i18n`: typed English/German dictionaries, locale helpers, and metadata.
+- `src/content`: bilingual portfolio content and anonymous project summaries.
 
-English is the default: `/` permanently redirects to `/en`. Both `/en` and `/de`
-provide home, engineering, fitness, creative, about, and contact pages. Unsupported
-locales and unknown pages return 404. Navigation retains the locale; switching
-languages retains the page path. Locale root layouts set the HTML language.
+Edit `src/content/homepage/en.ts` and `de.ts` together. Both satisfy
+`HomepageContent`. The Cloud PDM case study is based on supplied project material;
+other project areas are summaries without invented outcomes or client names.
 
-Dictionaries load only on the server through the Next.js `next/root-params` API.
-Both dictionaries satisfy the same type, so missing translation keys fail type
-checking. To add a page, add its key, translations, explicit route, and metadata.
-Each page declares its canonical URL, language alternatives, and localized Open
-Graph metadata using `https://elidon.de` as the production base URL.
-
-The header, footer, and pages are Server Components. Only interactive navigation
-and the pathname-aware language switcher are Client Components. Mobile navigation
-uses a button with an accessible name, expanded state, and controlled list.
-
-Design tokens live in `src/app/globals.css`. The layout provides responsive
-containers, visible keyboard focus, a skip link, and a single main landmark.
-The homepage provides a typography-first hero, engineering experience and expertise slots,
-featured project slots, a three-pillar editorial section, and a contact section.
-Professional details remain explicitly labeled placeholders. Business features
-are deferred.
-
-## Replacing homepage content
-
-Edit `src/content/homepage/en.ts` and `de.ts`; both satisfy `HomepageContent`.
-The hero uses two translated headline lines and deliberately has no portrait.
-Replace experience, expertise, and project placeholders with verified details.
-For each media slot, add a local asset under `public/` and set
-`image: { src: "/images/training.jpg", alt: "Descriptive translated alt text" }`.
-Update the caption too. The reusable media component uses `next/image`, fixed
-aspect ratios and responsive sizes. Captions sit beneath the image frame in normal
-flow, so they cannot overlap surrounding page sections.
-
-Editorial components and their directly imported CSS Module live in
-`src/components/editorial`. Tailwind, palette tokens, and site-wide accessibility
-styles remain in `src/app/globals.css`. The headline uses `clamp()`; experience
-and projects form two columns from 768px. The three-pillar section stacks on
-mobile, uses two columns from 768px, and three columns from 1024px. All content stays in document flow, with no fixed section
-heights. Small hover transitions and smooth anchor scrolling run only with
-`prefers-reduced-motion: no-preference`; there are no scroll-reveal animations.
-Mobile navigation supports
-Escape to close and return focus to the menu button.
-
-
-## Three pillars
-
-`src/components/editorial/three-pillars.tsx` renders Engineering, Fitness, and
-Creative directly after Selected Projects. Each card links to its localized page.
-All new section copy and placeholder labels are in the existing English/German
-`threePillars` dictionaries under `src/lib/i18n/dictionaries`.
-
-Add real images under `public/images` and configure `src/content/pillars.ts`:
-
-```ts
-engineering: {
-  image: {
-    src: "/images/engineering.jpg",
-    alt: { en: "Descriptive English alt text", de: "Deutscher Alternativtext" },
-  },
-},
-```
-
-All three media slots keep a 3:4 aspect ratio and use `next/image` with `object-fit:
-cover` when images are configured. Replacing placeholders preserves frame size.
+Private source documents are excluded from Git. Never place CVs or certificates
+in `public` or the exported `out` directory.

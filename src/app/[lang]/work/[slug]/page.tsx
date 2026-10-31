@@ -7,6 +7,13 @@ import { Media } from "@/components/editorial/media";
 import { EditorialLink } from "@/components/editorial/editorial-link";
 import styles from "@/components/editorial/editorial.module.css";
 
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const { work } = await getHomepageContent();
+  return work.projects.map(({ slug }) => ({ slug }));
+}
+
 async function getProject(slug: string) {
   const { work } = await getHomepageContent();
   const project = work.projects.find((entry) => entry.slug === slug);
