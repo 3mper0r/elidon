@@ -1,6 +1,7 @@
 import { getHomepageContent } from "@/content/homepage";
 import { getLocale } from "@/lib/i18n/dictionaries";
 import { localizedPath } from "@/lib/i18n/locales";
+import { EngineeringIcon, HeroArt } from "./hero-art";
 import { Container } from "./container";
 import { EditorialLink } from "./editorial/editorial-link";
 import { Media } from "./editorial/media";
@@ -17,7 +18,7 @@ export async function Homepage() {
           <div className={styles["hero-copy"]}>
             <p className={styles.eyebrow}>{hero.eyebrow}</p>
             <h1 id="hero-heading" className={styles["hero-heading"]}>
-              <span>{hero.heading[0]}</span><span className="text-secondary">{hero.heading[1]}</span>
+              <span>{hero.heading[0]}</span><span>{hero.heading[1]}</span>
             </h1>
             <div className={styles["hero-support"]}>
               <p className={styles["hero-introduction"]}>{hero.introduction}</p>
@@ -27,24 +28,23 @@ export async function Homepage() {
               </div>
             </div>
           </div>
-          <div className={styles["hero-innovation"]} aria-label="Engineering, AI, scalability and continuous improvement">
-            <div className={styles["innovation-orbit"]} aria-hidden="true" />
-            <div className={styles["innovation-globe"]} aria-hidden="true" />
-            <div className={styles["innovation-cards"]}>
-              {[
-                { symbol: "</>", label: "Build" },
-                { symbol: "AI", label: "AI" },
-                { symbol: "◇", label: "Scale" },
-                { symbol: "↗", label: "Improve" },
-              ].map((item, index) => (
-                <div key={item.label} className={styles["innovation-card"]} style={{ "--card-index": index } as React.CSSProperties}>
-                  <span className={styles["innovation-symbol"]} aria-hidden="true">{item.symbol}</span>
-                  <span className={styles["innovation-label"]}>{item.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <a href="#work" className={`${styles["hero-scroll"]} ${styles.eyebrow}`}><span aria-hidden="true">↓</span> {hero.scrollLink}</a>
+          <div className={styles["hero-innovation"]}><HeroArt /></div>
+        </Container>
+        <svg className={styles["hero-landscape"]} viewBox="0 0 1440 210" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="land-fill" x2="0" y2="1"><stop stopColor="#4a7034" stopOpacity=".5" /><stop offset="1" stopColor="#091b14" /></linearGradient>
+            <linearGradient id="land-edge"><stop stopColor="#e3f69b" /><stop offset=".35" stopColor="#759450" stopOpacity=".15" /><stop offset="1" stopColor="#d4e69a" stopOpacity=".7" /></linearGradient>
+          </defs>
+          <path d="M0 145C160 80 233 186 421 147S674 67 822 111s224 12 364-55S1368 1 1440 5V210H0Z" fill="url(#land-fill)" stroke="url(#land-edge)" />
+          <path d="M785 210c255-17 360-137 655-205v205Z" fill="url(#land-fill)" />
+        </svg>
+        <Container className={styles["hero-services"]}>
+          {[
+            { icon: "Build", en: "Fullstack Development", de: "Fullstack Entwicklung" },
+            { icon: "Scale", en: "Product Engineering", de: "Produktentwicklung" },
+            { icon: "Architecture", en: "System Architecture", de: "Systemarchitektur" },
+            { icon: "Performance", en: "Performance & Scale", de: "Performance & Skalierung" },
+          ].map((service) => <div key={service.icon} className={styles["hero-service"]}><EngineeringIcon kind={service.icon} /><span>{locale === "de" ? service.de : service.en}</span></div>)}
         </Container>
       </section>
       <section id="work" aria-labelledby="work-heading" className={`${styles["editorial-section"]} ${styles["engineering-section"]}`}>

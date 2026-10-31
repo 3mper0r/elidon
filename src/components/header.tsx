@@ -9,10 +9,10 @@ export async function Header() {
   const dictionary = await getDictionary();
 
   return (
-    <header className="relative z-30 border-b border-secondary/20">
+    <header className="relative z-30 bg-[#091b14]">
       <Container className="flex items-center justify-between gap-4 py-5 lg:gap-8 lg:py-7">
         <Link href={localizedPath(locale)} aria-label={`Elidon builds — ${dictionary.navigation.home}`} className="flex min-h-11 items-center text-2xl font-medium tracking-tight">
-          <span className="bg-linear-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent">elidon builds</span>
+          <span className="text-[#e5e9d9]">elidon builds</span>
         </Link>
         <Navigation locale={locale} labels={dictionary.navigation} accessibility={dictionary.accessibility} />
       </Container>

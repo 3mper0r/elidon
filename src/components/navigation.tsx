@@ -27,6 +27,7 @@ export function Navigation({ locale, labels, accessibility }: Props) {
       }
     }} className="flex items-center justify-end gap-2 sm:gap-5 lg:flex-1 lg:gap-7">
       <LanguageSwitcher locale={locale} label={accessibility.language} />
+      <Link href={`${localizedPath(locale)}#contact`} className="hidden min-h-10 items-center gap-3 rounded-xl bg-linear-to-br from-[#dceaa5] to-[#a8c47b] px-5 text-sm font-medium text-[#091b14] lg:order-last lg:inline-flex">{locale === "en" ? "Get in Touch" : "Kontakt aufnehmen"}<span aria-hidden="true">→</span></Link>
       <button
         ref={menuButton}
         type="button"
@@ -37,8 +38,8 @@ export function Navigation({ locale, labels, accessibility }: Props) {
       >
         {accessibility.menu}
       </button>
-      <ul id="primary-navigation" className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full max-h-[75dvh] w-full flex-col gap-1 overflow-y-auto border-b border-secondary/25 bg-background px-6 py-5 shadow-xl sm:px-10 lg:static lg:order-first lg:flex lg:max-h-none lg:w-auto lg:flex-row lg:gap-6 lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}>
-        {(["work", "experience", "about", "contact"] as const).map((page) => {
+      <ul id="primary-navigation" className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full max-h-[75dvh] w-full flex-col gap-1 overflow-y-auto border-b border-secondary/25 bg-background px-6 py-5 shadow-xl sm:px-10 lg:static lg:order-first lg:mx-auto lg:flex lg:max-h-none lg:w-auto lg:flex-row lg:gap-6 lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}>
+        {(["work", "experience", "about"] as const).map((page) => {
           const href = `${localizedPath(locale)}#${page}`;
           return (
             <li key={page}>
@@ -48,6 +49,7 @@ export function Navigation({ locale, labels, accessibility }: Props) {
             </li>
           );
         })}
+        <li className="lg:hidden"><Link href={`${localizedPath(locale)}#contact`} onClick={() => setOpenPath(null)} className="flex min-h-11 items-center px-2 py-3 text-secondary">{labels.contact}</Link></li>
       </ul>
     </nav>
   );

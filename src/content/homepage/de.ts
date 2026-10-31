@@ -2,14 +2,11 @@ import type { HomepageContent } from "./types";
 
 const homepage = {
   "hero": {
-    "eyebrow": "Elidon / Softwareentwickler",
-    "heading": [
-      "Softwareentwicklung.",
-      "Mit klarem Anspruch."
-    ],
-    "introduction": "Erfahrener Softwareentwickler. Dieses Portfolio verbindet ausgewählte Projekte, technische Entscheidungen und berufliche Erfahrung für Teams, die relevante Software entwickeln.",
-    "primaryLink": "Projekte ansehen",
-    "secondaryLink": "Mein Engineering-Ansatz",
+    "eyebrow": "Softwareentwickler",
+    "heading": ["Ich entwickle Produkte mit echter ", "Wirkung."],
+    "introduction": "Ich konzipiere und entwickle moderne Webanwendungen mit Fokus auf Produktwert, Performance und eine überzeugende Nutzererfahrung.",
+    "primaryLink": "Meine Arbeit ansehen",
+    "secondaryLink": "Über mich",
     "scrollLink": "Projekte entdecken"
   },
   "work": {

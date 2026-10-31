@@ -2,14 +2,14 @@ import type { HomepageContent } from "./types";
 
 const homepage = {
   "hero": {
-    "eyebrow": "Elidon / Software engineer",
+    "eyebrow": "Software engineer",
     "heading": [
-      "Software engineering.",
-      "Built with intent."
+      "Building products that create real ",
+      "impact."
     ],
-    "introduction": "An experienced software engineer. This portfolio brings together selected work, technical decisions, and professional experience for teams building software that matters.",
-    "primaryLink": "View selected work",
-    "secondaryLink": "Engineering approach",
+    "introduction": "I design and build modern web applications with a focus on product value, performance and great user experience.",
+    "primaryLink": "View My Work",
+    "secondaryLink": "About Me",
     "scrollLink": "Explore the work"
   },
   "work": {
