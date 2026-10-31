@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 import { defaultLocale } from "./src/lib/i18n/locales";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    agentUpgrade: "security",
+  },
   redirects() {
     return [{ source: "/", destination: `/${defaultLocale}`, permanent: true }];
   },
