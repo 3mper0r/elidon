@@ -250,3 +250,97 @@
 @media (min-width: 1024px) {
   .hero-support { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 3rem; }
 }
+
+/* Forest innovation hero — CSS-only, responsive, and motion-conscious. */
+.hero-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 94% 36%, #3e5a3f66, transparent 42%),
+    radial-gradient(ellipse at 0% 78%, #6b7f6730, transparent 38%), var(--background);
+}
+.hero-grid { position: relative; }
+.hero-innovation {
+  position: relative;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  perspective: 1100px;
+}
+.innovation-globe {
+  position: absolute;
+  width: min(90%, 440px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #6b7f6729, transparent 58%),
+    radial-gradient(circle at center, transparent 48%, #c7cbb81c 70%, transparent 72%);
+  border: 1px solid #c7cbb81a;
+  box-shadow: 0 0 90px #6b7f6725, inset 0 0 80px #0f1f17;
+  transform: rotate(-17deg);
+}
+.innovation-globe::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background-image: radial-gradient(#c7cbb8 1px, transparent 1.5px);
+  background-size: 13px 13px;
+  opacity: .14;
+  mask-image: radial-gradient(ellipse at 45% 35%, black, transparent 68%);
+}
+.innovation-orbit {
+  position: absolute;
+  width: 108%;
+  height: 48%;
+  border: 1px solid #c7cbb861;
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  box-shadow: 0 0 18px #c7cbb81b;
+}
+.innovation-cards {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.5rem 0;
+  transform: rotate(-8deg);
+}
+.innovation-card {
+  flex: 0 0 27%;
+  max-width: 150px;
+  aspect-ratio: .74;
+  margin-left: -3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .9rem;
+  border: 1px solid #c7cbb875;
+  border-radius: 1.25rem;
+  background: linear-gradient(145deg, #3e5a3fdd, #1e3a2eee 65%, #0f1f17);
+  box-shadow: 0 16px 36px #0008, inset 0 1px #c7cbb85c, 0 0 25px #6b7f6733;
+  transform: translateY(calc((1.5 - var(--card-index)) * 15px)) rotateY(-13deg);
+}
+.innovation-card:first-child { margin-left: 0; }
+.innovation-symbol { font-size: clamp(1.4rem, 3vw, 2.6rem); font-weight: 500; color: #c7cbb8; }
+.innovation-label { font-size: clamp(.7rem, 1vw, .95rem); color: #e5e9d9; }
+@media (min-width: 1024px) {
+  .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; }
+  .hero-heading { font-size: clamp(3.4rem, 5.2vw, 6.2rem); }
+  .hero-innovation { min-height: 490px; }
+  .hero-scroll { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .hero-innovation { min-height: 290px; }
+  .innovation-card { border-radius: .8rem; gap: .5rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .innovation-cards { animation: innovation-float 7s ease-in-out infinite; }
+  @keyframes innovation-float {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-10px) rotate(-7deg); }
+  }
+}

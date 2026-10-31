@@ -27,6 +27,23 @@ export async function Homepage() {
               </div>
             </div>
           </div>
+          <div className={styles["hero-innovation"]} aria-label="Engineering, AI, scalability and continuous improvement">
+            <div className={styles["innovation-orbit"]} aria-hidden="true" />
+            <div className={styles["innovation-globe"]} aria-hidden="true" />
+            <div className={styles["innovation-cards"]}>
+              {[
+                { symbol: "</>", label: "Build" },
+                { symbol: "AI", label: "AI" },
+                { symbol: "◇", label: "Scale" },
+                { symbol: "↗", label: "Improve" },
+              ].map((item, index) => (
+                <div key={item.label} className={styles["innovation-card"]} style={{ "--card-index": index } as React.CSSProperties}>
+                  <span className={styles["innovation-symbol"]} aria-hidden="true">{item.symbol}</span>
+                  <span className={styles["innovation-label"]}>{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
           <a href="#work" className={`${styles["hero-scroll"]} ${styles.eyebrow}`}><span aria-hidden="true">↓</span> {hero.scrollLink}</a>
         </Container>
       </section>
