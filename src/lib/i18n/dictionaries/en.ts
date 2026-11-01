@@ -9,7 +9,8 @@ const dictionary = {
     "fitness": "Fitness",
     "creative": "Creative",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "challenges": "Challenges"
   },
   "accessibility": {
     "navigation": "Main navigation",
@@ -19,6 +20,10 @@ const dictionary = {
   },
   "footer": "Software engineering. Thoughtful execution.",
   "pages": {
+    "challenges": {
+      "heading": "Challenges",
+      "description": "Six challenges: Das Schwimmen, Der Klimmzug, Der Sprung, Beast Sprung, Tour de Promenade and Altstadt Sprint."
+    },
     "home": {
       "heading": "Elidon",
       "description": "Experienced software engineer — selected work, technical expertise, and professional experience."

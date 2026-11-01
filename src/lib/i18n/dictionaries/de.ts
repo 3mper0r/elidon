@@ -9,7 +9,8 @@ const dictionary = {
     "fitness": "Fitness",
     "creative": "Kreatives",
     "about": "Über mich",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "challenges": "Challenges"
   },
   "accessibility": {
     "navigation": "Hauptnavigation",
@@ -19,6 +20,10 @@ const dictionary = {
   },
   "footer": "Softwareentwicklung. Mit klarem Anspruch.",
   "pages": {
+    "challenges": {
+      "heading": "Challenges",
+      "description": "Sechs Challenges: Das Schwimmen, Der Klimmzug, Der Sprung, Beast Sprung, Tour de Promenade und Altstadt Sprint."
+    },
     "home": {
       "heading": "Elidon",
       "description": "Erfahrener Softwareentwickler — ausgewählte Projekte, technische Expertise und berufliche Erfahrung."

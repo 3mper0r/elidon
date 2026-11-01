@@ -6,7 +6,7 @@ export function isLocale(value: string): value is Locale {
   return locales.some((locale) => locale === value);
 }
 
-export const pageKeys = ["home", "engineering", "fitness", "creative", "about", "contact"] as const;
+export const pageKeys = ["home", "engineering", "fitness", "creative", "about", "contact", "challenges"] as const;
 export type PageKey = (typeof pageKeys)[number];
 
 export function localizedPath(locale: Locale, page: PageKey = "home") {

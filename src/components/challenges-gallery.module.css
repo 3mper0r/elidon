@@ -1,0 +1,99 @@
+.gallery {
+  --gutter: clamp(24px, 4.6vw, 66px);
+  --lime: #cbd88c;
+  --muted: #b7c1af;
+  background: #041a13;
+  color: #edf0e7;
+}
+
+.inner { width: calc(100% - var(--gutter) - var(--gutter)); max-width: 1248px; margin-inline: auto; }
+.hero { position: relative; isolation: isolate; overflow: hidden; border-bottom: 1px solid #b5ca8c10; background: #041a13; }
+.hero::before, .hero::after { position: absolute; z-index: -1; inset: 0; content: ""; }
+.hero::before { background: url("/images/challenges/mountain-hero.webp") 72% top / cover no-repeat; opacity: 0.82; }
+.hero::after { background: linear-gradient(90deg, #041a13 0%, #041a13e8 25%, #041a1360 53%, #041a1300 75%), linear-gradient(0deg, #041a13 0%, transparent 36%, #041a1333 100%); }
+.heroInner { display: flex; align-items: center; justify-content: space-between; min-height: 260px; padding-block: 28px 26px; }
+.heroCopy { max-width: 780px; }
+.eyebrow { margin-bottom: 12px; color: #d0d5c5; font-size: 10px; font-weight: 500; letter-spacing: 0.32em; }
+.heroCopy h1 { font-size: clamp(35px, 3.45vw, 48px); font-weight: 600; letter-spacing: -0.048em; line-height: 1.12; }
+.heroCopy h1 span { color: var(--lime); }
+.introduction { max-width: 570px; margin-top: 12px; color: #d0d5c9; font-size: 14px; line-height: 1.75; }
+.statistics { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 22px; }
+.statistic { display: flex; align-items: center; gap: 12px; min-width: 126px; }
+.statistic + .statistic { padding-left: 24px; border-left: 1px solid #cbd88c16; }
+.statistic > svg { width: 25px; height: 25px; color: var(--lime); }
+.statistic strong, .statistic span { display: block; }
+.statistic strong { font-size: 21px; font-weight: 600; line-height: 1.2; }
+.statistic span { margin-top: 3px; color: #c6cebd; font-size: 11px; }
+.heroDisciplines { display: flex; flex: 0 0 auto; flex-direction: column; gap: 8px; align-items: flex-end; margin-left: 30px; color: #d0d8ca; font-size: 10px; letter-spacing: 0.065em; text-transform: uppercase; }
+.heroDisciplines::after { width: 27px; height: 2px; margin-top: 16px; background: var(--lime); content: ""; }
+.episodes { padding-bottom: 32px; }
+.filters { display: flex; flex-wrap: wrap; gap: 12px; padding-block: 20px; }
+.filters button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 9px; padding: 9px 18px; border: 1px solid #cbd88c26; border-radius: 10px; color: #e3e8d9; font-size: 12px; cursor: pointer; transition: background 160ms, border-color 160ms; }
+.filters button svg { width: 18px; height: 18px; color: var(--lime); }
+.filters button:hover { border-color: #cbd88c75; background: #cbd88c0b; }
+.filters button[aria-pressed="true"] { border-color: var(--lime); background: linear-gradient(135deg, #e1e8a9, #bcca7d); color: #102017; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.card { min-width: 0; overflow: hidden; border: 1px solid #cbd88c20; border-radius: 13px; background: linear-gradient(130deg, #0b241a, #061d15); transition: border-color 160ms; }
+.card:hover { border-color: #cbd88c65; }
+.card > a { display: block; height: 100%; }
+.card > a:focus-visible { outline-offset: -3px; }
+.cover { position: relative; width: 100%; min-height: 170px; overflow: hidden; isolation: isolate; aspect-ratio: 2.35; background: #183128; }
+.cover::after { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, #02150ed9 0%, #02150e66 36%, #02150e00 72%), linear-gradient(0deg, #02150e47, transparent 55%); content: ""; }
+.coverImage { position: absolute; z-index: -2; inset: 0; background-size: cover; background-position: center; }
+.episodeNumber { position: absolute; top: 18px; left: 22px; color: #e0e7b4; font-size: 8px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; }
+.coverTitle { position: absolute; top: 50%; left: 22px; width: 43%; transform: translateY(-50%); overflow-wrap: break-word; color: #f5f6ee; font-size: clamp(24px, 2.25vw, 31px); font-style: italic; font-weight: 650; letter-spacing: -0.045em; line-height: 1.02; text-shadow: 0 1px 15px #0008; }
+.play { position: absolute; top: 50%; left: 58%; display: grid; width: 42px; height: 42px; transform: translate(-50%, -50%); place-items: center; border: 1px solid #f0f3ddc9; border-radius: 50%; background: #061c16ae; color: #f5f6ee; box-shadow: 0 0 0 4px #041a1315; }
+.play svg { width: 23px; height: 23px; }
+.coverCaption { position: absolute; right: 12px; bottom: 12px; padding: 4px 6px; border-radius: 4px; background: #03150fc9; color: #e4e9db; font-size: 9px; line-height: 1; }
+.cardDetails { display: flex; align-items: flex-start; gap: 12px; min-height: 76px; padding: 13px 14px; }
+.cardDetails > div { flex: 1; min-width: 0; }
+.sportIcon { flex: 0 0 22px; width: 22px; height: 22px; margin-top: 2px; color: var(--lime); }
+.cardDetails h3 { font-size: 12px; font-weight: 550; letter-spacing: -0.02em; line-height: 1.5; }
+.cardDetails p { margin-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.cardArrow { flex: 0 0 15px; width: 15px; height: 15px; align-self: center; color: #d6decf; }
+.upcoming .coverImage { inset: -12px; background-image: url("/images/challenges/mountain-hero.webp"); background-position: right 45%; filter: blur(7px) saturate(0.65); }
+.upcoming .cover::after { background: linear-gradient(90deg, #031910a1, #03191038); }
+.upcoming .coverTitle { max-width: 150px; }
+.empty { padding-block: 70px; color: var(--muted); font-size: 14px; text-align: center; }
+.note { margin-top: 20px; color: #8e9e8b; font-size: 10px; line-height: 1.7; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .coverImage { transition: transform 500ms ease; }
+  .card > a:hover .coverImage { transform: scale(1.04); }
+}
+
+@media (max-width: 1099px) {
+  .heroDisciplines { display: none; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .coverTitle { font-size: 28px; }
+}
+
+@media (max-width: 639px) {
+  .hero::before { background-position: 68% center; opacity: 0.55; }
+  .hero::after { background: linear-gradient(90deg, #041a13dd, #041a1377), linear-gradient(0deg, #041a13, transparent 60%); }
+  .heroInner { min-height: 335px; padding-block: 32px; }
+  .heroCopy h1 { font-size: clamp(33px, 8.5vw, 42px); line-height: 1.15; }
+  .introduction { font-size: 13px; line-height: 1.75; }
+  .statistics { gap: 15px; }
+  .statistic { min-width: 0; gap: 7px; }
+  .statistic + .statistic { padding-left: 14px; }
+  .statistic > svg { width: 21px; height: 21px; }
+  .statistic strong { font-size: 19px; }
+  .statistic span { font-size: 10px; }
+  .filters { gap: 8px; }
+  .filters button { gap: 7px; padding-inline: 12px; font-size: 11px; }
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .cover { min-height: 185px; aspect-ratio: 1.9; }
+  .coverTitle { top: auto; bottom: 42px; width: 70%; transform: none; font-size: 29px; }
+  .play { top: 18px; right: 18px; left: auto; transform: none; }
+  .cardDetails { min-height: 82px; padding: 15px; }
+  .cardDetails h3 { font-size: 13px; }
+  .cardDetails p { font-size: 11px; }
+}
+
+@media (max-width: 359px) {
+  .statistics { column-gap: 12px; row-gap: 18px; }
+  .statistic > svg { display: none; }
+  .statistic + .statistic { padding-left: 12px; }
+  .coverTitle { font-size: 26px; }
+}
