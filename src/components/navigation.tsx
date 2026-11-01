@@ -34,7 +34,7 @@ export function Navigation({ locale, labels, accessibility }: Props) {
         aria-expanded={open}
         aria-controls="primary-navigation"
         onClick={() => setOpenPath(open ? null : pathname)}
-        className="min-h-11 rounded border border-secondary/40 px-4 text-base lg:hidden"
+        className="min-h-11 rounded border border-secondary/40 px-2 text-base min-[380px]:px-4 lg:hidden"
       >
         {accessibility.menu}
       </button>

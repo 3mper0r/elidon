@@ -51,8 +51,8 @@ export function ChallengesGallery({ locale }: { locale: Locale }) {
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {filtered.map((episode) => (
-            <article key={episode.number} className="group overflow-hidden rounded-2xl border border-[#c7cbb8]/15 bg-[#10261d] transition-colors hover:border-[#b9d47f]/50">
-              <a href={episode.url} target="_blank" rel="noopener noreferrer" aria-label={de ? `Episode ${episode.number}: ${episode.title[locale]} auf Instagram ansehen (öffnet in neuem Tab)` : `Watch Episode ${episode.number}: ${episode.title[locale]} on Instagram (opens in a new tab)`} className="relative block aspect-[1.8] min-h-52 overflow-hidden bg-[#1e3a2e]">
+            <article key={episode.number} className="group min-w-0 overflow-hidden rounded-2xl border border-[#c7cbb8]/15 bg-[#10261d] transition-colors hover:border-[#b9d47f]/50">
+              <a href={episode.url} target="_blank" rel="noopener noreferrer" aria-label={de ? `Episode ${episode.number}: ${episode.title[locale]} auf Instagram ansehen (öffnet in neuem Tab)` : `Watch Episode ${episode.number}: ${episode.title[locale]} on Instagram (opens in a new tab)`} className="relative block aspect-[1.8] min-h-52 w-full overflow-hidden bg-[#1e3a2e]">
                 <div className="absolute inset-0 bg-cover bg-center motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-105" style={{ backgroundImage: `linear-gradient(90deg,#091b14c9,transparent 78%),url("${episode.image}")` }} />
                 <span className="absolute left-6 top-6 text-[10px] font-semibold uppercase tracking-[.24em] text-[#dceaa5]">Episode {episode.number}</span>
                 <h2 className="absolute bottom-14 left-6 right-6 break-words text-2xl font-semibold italic leading-tight tracking-tight text-white sm:text-3xl">{episode.title[locale]}</h2>
