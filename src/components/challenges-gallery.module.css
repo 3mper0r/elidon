@@ -9,7 +9,7 @@
 .inner { width: calc(100% - var(--gutter) - var(--gutter)); max-width: 1248px; margin-inline: auto; }
 .hero { position: relative; isolation: isolate; overflow: hidden; border-bottom: 1px solid #b5ca8c10; background: #041a13; }
 .hero::before, .hero::after { position: absolute; z-index: -1; inset: 0; content: ""; }
-.hero::before { background: url("/images/challenges/mountain-hero.webp") 72% 52% / cover no-repeat; opacity: 0.82; }
+.hero::before { background: url("/images/challenges/mountain-hero.webp") 72% top / cover no-repeat; opacity: 0.82; }
 .hero::after { background: linear-gradient(90deg, #041a13 0%, #041a13e8 25%, #041a1360 53%, #041a1300 75%), linear-gradient(0deg, #041a13 0%, transparent 36%, #041a1333 100%); }
 .heroInner { display: flex; align-items: center; justify-content: space-between; min-height: 260px; padding-block: 28px 26px; }
 .heroCopy { max-width: 780px; }

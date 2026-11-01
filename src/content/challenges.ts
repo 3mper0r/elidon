@@ -38,7 +38,7 @@ export const challengeEpisodes: Episode[] = [
   },
   {
     number: 3,
-    title: { en: "Swimming Challenge", de: "Schwimmchallenge" },
+    title: { en: "Swimming Challenge", de: "Schwimm-Challenge" },
     category: "swimming",
     description: {
       en: "Endurance in the water and a new personal test.",
