@@ -1,6 +1,7 @@
 {
   "name": "elidon",
   "compatibility_date": "2026-10-23",
+  "previews": {},
   "assets": {
     "directory": "./out",
     "html_handling": "auto-trailing-slash",

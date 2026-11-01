@@ -14,6 +14,12 @@ In the project's **Settings → Build**, connect `3mper0r/elidon` and set:
 - Root directory: repository root (leave blank)
 - Node version: `22` (also specified in `.node-version`)
 
+Cloudflare has a separate **Preview command** for preview builds. Keep it set to
+`npx wrangler preview` when preview builds are enabled. The empty `previews` block
+in `wrangler.jsonc` enables this command; static assets stay at the top level.
+If a build unexpectedly runs `wrangler preview`, check its branch and build type
+in the build details. Production pushes to `main` should run `wrangler deploy`.
+
 Retry deployment using the latest source commit. Wrangler reads the checked-in
 configuration and uploads `out`, without the framework auto-setup that attempts
 to migrate Next.js to OpenNext. Do not set the asset directory to `.next`.
