@@ -1,6 +1,5 @@
-import { lang } from "next/root-params";
 import { notFound } from "next/navigation";
-import { isLocale } from "./locales";
+import { defaultLocale, isLocale, type Locale } from "./locales";
 import type { Dictionary } from "./types";
 
 const dictionaries = {
@@ -8,12 +7,12 @@ const dictionaries = {
   de: () => import("./dictionaries/de").then((module) => module.default),
 };
 
-export async function getLocale() {
-  const locale = await lang();
-  if (!isLocale(locale)) notFound();
-  return locale;
+export async function getLocale(locale?: string | null): Promise<Locale> {
+  const currentLocale = locale ?? defaultLocale;
+  if (!isLocale(currentLocale)) notFound();
+  return currentLocale;
 }
 
-export async function getDictionary(): Promise<Dictionary> {
-  return dictionaries[await getLocale()]();
+export async function getDictionary(locale?: string | null): Promise<Dictionary> {
+  return dictionaries[await getLocale(locale)]();
 }

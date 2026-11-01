@@ -18,17 +18,18 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
-  const locale = await getLocale();
-  const dictionary = await getDictionary();
+export default async function LocaleLayout({ children, params }: LayoutProps<"/[lang]">) {
+  const { lang } = await params;
+  const locale = await getLocale(lang);
+  const dictionary = await getDictionary(locale);
 
   return (
     <html lang={locale} className={`${geist.variable} antialiased`}>
       <body className="flex min-h-dvh flex-col font-sans">
         <a href="#main-content" className="skip-link">{dictionary.accessibility.skipToContent}</a>
-        <Header />
+        <Header locale={locale} />
         <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
-        <Footer />
+        <Footer locale={locale} />
       </body>
     </html>
   );

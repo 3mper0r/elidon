@@ -1,10 +1,12 @@
 import { Homepage } from "@/components/homepage";
 import { getPageMetadata } from "@/lib/i18n/metadata";
 
-export function generateMetadata() {
-  return getPageMetadata("home");
+export async function generateMetadata({ params }: PageProps<"/[lang]">) {
+  const { lang } = await params;
+  return getPageMetadata("home", lang);
 }
 
-export default function Page() {
-  return <Homepage />;
+export default async function Page({ params }: PageProps<"/[lang]">) {
+  const { lang } = await params;
+  return <Homepage locale={lang} />;
 }
