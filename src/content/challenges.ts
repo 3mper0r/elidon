@@ -40,12 +40,12 @@ export const challengeEpisodes: Episode[] = [
   },
   {
     number: 4,
-    title: "Biestsprung",
+    title: "Beast Sprung",
     category: "outdoor",
     series: "canal",
     description: {
-      en: "Biestsprung — the fourth challenge in the series.",
-      de: "Biestsprung – die vierte Challenge der Serie.",
+      en: "Beast Sprung — the fourth challenge in the series.",
+      de: "Beast Sprung – die vierte Challenge der Serie.",
     },
     image: "/images/challenges/canal.webp",
     url: "https://www.instagram.com/reel/DdhBeFTKwNV/",
@@ -64,7 +64,7 @@ export const challengeEpisodes: Episode[] = [
   },
   {
     number: 2,
-    title: "Klimmzug-Challenge",
+    title: "Der Klimmzug",
     category: "strength",
     series: "canal",
     description: {
@@ -76,7 +76,7 @@ export const challengeEpisodes: Episode[] = [
   },
   {
     number: 1,
-    title: "Schwimm-Challenge",
+    title: "Das Schwimmen",
     category: "swimming",
     series: "canal",
     description: {

@@ -69,17 +69,16 @@ export function ChallengesGallery({ locale }: { locale: Locale }) {
         <div className={styles.grid}>
           {filtered.map((episode) => (
             <article key={episode.number} className={styles.card}>
-              <a href={episode.url} target="_blank" rel="noopener noreferrer" aria-label={de ? `Episode ${episode.number}: ${episode.title} auf Instagram ansehen (öffnet in neuem Tab)` : `Watch Episode ${episode.number}: ${episode.title} on Instagram (opens in a new tab)`}>
+              <a href={episode.url} target="_blank" rel="noopener noreferrer" aria-label={de ? `${episode.title} auf Instagram ansehen (öffnet in neuem Tab)` : `Watch ${episode.title} on Instagram (opens in a new tab)`}>
                 <div className={styles.cover} data-episode-cover>
                   <div className={styles.coverImage} style={{ backgroundImage: `url("${episode.image}")` }} />
-                  <span className={styles.episodeNumber}>Episode {episode.number}</span>
                   <h2 className={styles.coverTitle} data-cover-title>{episode.title}</h2>
                   <span className={styles.play} data-play-control><ChallengeIcon name="play" /></span>
                   <span className={styles.coverCaption} data-cover-caption>Instagram ↗</span>
                 </div>
                 <div className={styles.cardDetails}>
                   <ChallengeIcon className={styles.sportIcon} name={episode.category} />
-                  <div><h3>Episode {episode.number} — {episode.title}</h3><p>{episode.description[locale]}</p></div>
+                  <div><h3>{episode.title}</h3><p>{episode.description[locale]}</p></div>
                   <ChallengeIcon className={styles.cardArrow} name="arrow" />
                 </div>
               </a>
@@ -96,7 +95,7 @@ export function ChallengesGallery({ locale }: { locale: Locale }) {
               </div>
               <div className={styles.cardDetails}>
                 <ChallengeIcon className={styles.sportIcon} name="calendar" />
-                <div><h3>{de ? "Episode 7 — Neue Challenge" : "Episode 7 — New Challenge"}</h3><p>{de ? "Eine neue Herausforderung. Bald mehr." : "A new challenge. More to come."}</p></div>
+                <div><h3>{de ? "Nächste Episode" : "Next episode"}</h3><p>{de ? "Eine neue Herausforderung. Bald mehr." : "A new challenge. More to come."}</p></div>
               </div>
             </article>
           )}

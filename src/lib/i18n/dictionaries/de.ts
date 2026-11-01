@@ -22,7 +22,7 @@ const dictionary = {
   "pages": {
     "challenges": {
       "heading": "Challenges",
-      "description": "Sechs Challenges: Schwimmen, Klimmzüge, Der Sprung, Biestsprung, Tour de Promenade und Altstadt Sprint."
+      "description": "Sechs Challenges: Das Schwimmen, Der Klimmzug, Der Sprung, Beast Sprung, Tour de Promenade und Altstadt Sprint."
     },
     "home": {
       "heading": "Elidon",
