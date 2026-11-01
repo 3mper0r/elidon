@@ -9,22 +9,22 @@ import styles from "@/components/editorial/editorial.module.css";
 
 export const dynamicParams = false;
 
-export async function generateStaticParams() {
-  const { work } = await getHomepageContent();
+export async function generateStaticParams({ params }: { params: { lang: string } }) {
+  const { work } = await getHomepageContent(params.lang);
   return work.projects.map(({ slug }) => ({ slug }));
 }
 
-async function getProject(slug: string) {
-  const { work } = await getHomepageContent();
+async function getProject(slug: string, locale: string) {
+  const { work } = await getHomepageContent(locale);
   const project = work.projects.find((entry) => entry.slug === slug);
   if (!project) notFound();
   return { work, project };
 }
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/work/[slug]">): Promise<Metadata> {
-  const { slug } = await params;
-  const { project } = await getProject(slug);
-  const locale = await getLocale();
+  const { slug, lang } = await params;
+  const { project } = await getProject(slug, lang);
+  const locale = await getLocale(lang);
   const path = `/${locale}/work/${slug}`;
   return {
     title: `${project.title} | Elidon`,
@@ -36,9 +36,9 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/work/[slug
 }
 
 export default async function Page({ params }: PageProps<"/[lang]/work/[slug]">) {
-  const { slug } = await params;
-  const { work, project } = await getProject(slug);
-  const locale = await getLocale();
+  const { slug, lang } = await params;
+  const { work, project } = await getProject(slug, lang);
+  const locale = await getLocale(lang);
   return (
     <Container className="py-20 sm:py-28 lg:py-36">
       <p className={styles.eyebrow}>{work.status}</p>

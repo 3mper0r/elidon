@@ -1,10 +1,12 @@
 import { PlaceholderPage } from "@/components/placeholder-page";
 import { getPageMetadata } from "@/lib/i18n/metadata";
 
-export function generateMetadata() {
-  return getPageMetadata("fitness");
+export async function generateMetadata({ params }: PageProps<"/[lang]">) {
+  const { lang } = await params;
+  return getPageMetadata("fitness", lang);
 }
 
-export default function Page() {
-  return <PlaceholderPage page="fitness" />;
+export default async function Page({ params }: PageProps<"/[lang]">) {
+  const { lang } = await params;
+  return <PlaceholderPage page="fitness" locale={lang} />;
 }

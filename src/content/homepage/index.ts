@@ -6,6 +6,6 @@ const content = {
   de: () => import("./de").then((module) => module.default),
 };
 
-export async function getHomepageContent(): Promise<HomepageContent> {
-  return content[await getLocale()]();
+export async function getHomepageContent(localeOverride?: string | null): Promise<HomepageContent> {
+  return content[await getLocale(localeOverride)]();
 }

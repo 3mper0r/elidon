@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { getDictionary, getLocale } from "./dictionaries";
 import { localizedPath, type PageKey } from "./locales";
 
-export async function getPageMetadata(page: PageKey): Promise<Metadata> {
-  const locale = await getLocale();
-  const dictionary = await getDictionary();
+export async function getPageMetadata(page: PageKey, localeOverride?: string | null): Promise<Metadata> {
+  const locale = await getLocale(localeOverride);
+  const dictionary = await getDictionary(locale);
   const { heading, description } = dictionary.pages[page];
   const title = page === "home"
     ? `Elidon | ${locale === "en" ? "Software Engineer" : "Softwareentwickler"}`

@@ -7,9 +7,9 @@ import { Navigation } from "./navigation";
 
 const wordmark = Space_Grotesk({ subsets: ["latin"], weight: "700", display: "swap" });
 
-export async function Header() {
-  const locale = await getLocale();
-  const dictionary = await getDictionary();
+export async function Header({ locale: localeOverride }: { locale?: string | null }) {
+  const locale = await getLocale(localeOverride);
+  const dictionary = await getDictionary(locale);
 
   return (
     <header className="relative z-30 bg-[#091b14]">

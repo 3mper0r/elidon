@@ -7,9 +7,9 @@ import { Container } from "../container";
 import { SectionHeading } from "./section-heading";
 import styles from "./three-pillars.module.css";
 
-export async function ThreePillars() {
-  const locale = await getLocale();
-  const { threePillars: content } = await getDictionary();
+export async function ThreePillars({ locale: localeOverride }: { locale?: string | null }) {
+  const locale = await getLocale(localeOverride);
+  const { threePillars: content } = await getDictionary(locale);
 
   return (
     <section id="three-pillars" aria-labelledby="three-pillars-heading" className={styles.section}>
