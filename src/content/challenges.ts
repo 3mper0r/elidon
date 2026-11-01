@@ -1,11 +1,13 @@
 import type { Locale } from "@/lib/i18n/locales";
 
-export type ChallengeCategory = "running" | "cycling" | "swimming" | "outdoor";
+export type ChallengeCategory = "running" | "cycling" | "swimming" | "outdoor" | "strength";
+export type ChallengeSeries = "canal";
 
 type Episode = {
   number: number;
-  title: Record<Locale, string>;
+  title: string;
   category: ChallengeCategory;
+  series?: ChallengeSeries;
   description: Record<Locale, string>;
   image: string;
   url: string;
@@ -15,58 +17,73 @@ type Episode = {
 // Editorial copy remains provisional until the final descriptions are supplied.
 export const challengeEpisodes: Episode[] = [
   {
-    number: 5,
-    title: { en: "Tour de Promenade", de: "Tour de Promenade" },
+    number: 6,
+    title: "Altstadt Sprint",
     category: "running",
     description: {
-      en: "A running challenge around Münster's iconic Promenade.",
-      de: "Eine Laufchallenge rund um Münsters bekannte Promenade.",
+      en: "A sprint through the old town.",
+      de: "Ein Sprint durch die Altstadt.",
     },
     image: "/images/challenges/promenade.webp",
+    url: "https://www.instagram.com/reel/DfNRaS5qwBy/",
+  },
+  {
+    number: 5,
+    title: "Tour de Promenade",
+    category: "running",
+    description: {
+      en: "A running challenge along the Promenade.",
+      de: "Eine Laufchallenge entlang der Promenade.",
+    },
+    image: "/images/challenges/running.webp",
     url: "https://www.instagram.com/reel/DepSPFyKwfa/",
   },
   {
     number: 4,
-    title: { en: "Kanal Challenge", de: "Kanal Challenge" },
-    category: "running",
+    title: "Biestsprung",
+    category: "outdoor",
+    series: "canal",
     description: {
-      en: "A long-distance run alongside the canal.",
-      de: "Ein Langstreckenlauf entlang des Kanals.",
+      en: "Biestsprung — the fourth challenge in the series.",
+      de: "Biestsprung – die vierte Challenge der Serie.",
     },
     image: "/images/challenges/canal.webp",
     url: "https://www.instagram.com/reel/DdhBeFTKwNV/",
   },
   {
     number: 3,
-    title: { en: "Swimming Challenge", de: "Schwimm-Challenge" },
-    category: "swimming",
+    title: "Der Sprung",
+    category: "outdoor",
+    series: "canal",
     description: {
-      en: "Endurance in the water and a new personal test.",
-      de: "Ausdauer im Wasser und eine neue persönliche Herausforderung.",
+      en: "Der Sprung — the third challenge in the series.",
+      de: "Der Sprung – die dritte Challenge der Serie.",
     },
-    image: "/images/challenges/swimming.webp",
+    image: "/images/challenges/canal.webp",
     url: "https://www.instagram.com/reel/Dc8_bojqfCl/",
   },
   {
     number: 2,
-    title: { en: "MTB Challenge", de: "MTB Challenge" },
-    category: "cycling",
+    title: "Klimmzug-Challenge",
+    category: "strength",
+    series: "canal",
     description: {
-      en: "Forest trails, technical riding and elevation.",
-      de: "Waldwege, anspruchsvolle Trails und Höhenmeter.",
+      en: "A challenge at the pull-up bar.",
+      de: "Eine Challenge an der Klimmzugstange.",
     },
-    image: "/images/challenges/cycling.webp",
+    image: "/images/challenges/canal.webp",
     url: "https://www.instagram.com/reel/DcrGG50KPyS/",
   },
   {
     number: 1,
-    title: { en: "Running Challenge", de: "Laufchallenge" },
-    category: "running",
+    title: "Schwimm-Challenge",
+    category: "swimming",
+    series: "canal",
     description: {
-      en: "The beginning of a personal endurance series.",
-      de: "Der Auftakt einer persönlichen Ausdauerserie.",
+      en: "The swimming challenge that started the series.",
+      de: "Die Schwimm-Challenge zum Auftakt der Serie.",
     },
-    image: "/images/challenges/running.webp",
+    image: "/images/challenges/swimming.webp",
     url: "https://www.instagram.com/reel/DcY-reYq2BL/",
   },
 ];

@@ -2,6 +2,11 @@
 
 Generated with the built-in image generation tool for the gallery design reference. These images are illustrations, not photographs of the actual episodes. The original generated PNGs remain in the generation library; optimized WebP files are served locally from `public/images/challenges/`.
 
+Current card assignments: the city illustration (`promenade.webp`) belongs to
+episode 6, Altstadt Sprint. The swimming illustration belongs to episode 1.
+Episode 5 uses the running illustration; episodes 2–4 use the neutral canal
+illustration as temporary backgrounds while individual covers are reviewed.
+
 ## Hero
 
 Saved asset: `public/images/challenges/mountain-hero.webp`
