@@ -10,16 +10,16 @@ type Episode = {
   category: Category;
   description: string;
   image: string;
-  duration?: string;
+  
   url?: string;
 };
 
 const episodes: Episode[] = [
-  { number: 5, title: "Tour de Promenade", category: "running", description: "A running challenge around Münster's iconic Promenade.", image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=85" },
-  { number: 4, title: "Kanal Challenge", category: "running", description: "A long-distance run alongside the canal.", image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=85" },
-  { number: 3, title: "Swimming Challenge", category: "swimming", description: "Endurance in the water and a new personal test.", image: "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1000&q=85" },
-  { number: 2, title: "MTB Challenge", category: "cycling", description: "Forest trails, technical riding and elevation.", image: "https://images.unsplash.com/photo-1544191696-15693072c4d5?auto=format&fit=crop&w=1000&q=85" },
-  { number: 1, title: "Running Challenge", category: "running", description: "The beginning of a personal endurance series.", image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1000&q=85" },
+  { number: 5, title: "Tour de Promenade", category: "running", description: "A running challenge around Münster's iconic Promenade.", image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=85", url: "https://www.instagram.com/reel/DepSPFyKwfa/" },
+  { number: 4, title: "Kanal Challenge", category: "running", description: "A long-distance run alongside the canal.", image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=85", url: "https://www.instagram.com/reel/DdhBeFTKwNV/" },
+  { number: 3, title: "Swimming Challenge", category: "swimming", description: "Endurance in the water and a new personal test.", image: "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1000&q=85", url: "https://www.instagram.com/reel/Dc8_bojqfCl/" },
+  { number: 2, title: "MTB Challenge", category: "cycling", description: "Forest trails, technical riding and elevation.", image: "https://images.unsplash.com/photo-1544191696-15693072c4d5?auto=format&fit=crop&w=1000&q=85", url: "https://www.instagram.com/reel/DcrGG50KPyS/" },
+  { number: 1, title: "Running Challenge", category: "running", description: "The beginning of a personal endurance series.", image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1000&q=85", url: "https://www.instagram.com/reel/DcY-reYq2BL/" },
 ];
 
 const icons: Record<Category, string> = { running: "↗", cycling: "◎", swimming: "≋", outdoor: "△" };
@@ -70,13 +70,13 @@ export function ChallengesGallery({ locale }: { locale: Locale }) {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {filtered.map((episode) => (
             <article key={episode.number} className="group overflow-hidden rounded-2xl border border-[#c7cbb8]/15 bg-[#10261d] transition-colors hover:border-[#b9d47f]/50">
-              <div className="relative aspect-[1.8] overflow-hidden bg-[#1e3a2e]">
+              <a href={episode.url} target="_blank" rel="noopener noreferrer" aria-label={`Watch Episode ${episode.number} on Instagram`} className="relative block aspect-[1.8] overflow-hidden bg-[#1e3a2e]">
                 <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `linear-gradient(90deg,#091b14c9,transparent 78%),url("${episode.image}")` }} />
                 <span className="absolute left-6 top-6 text-[10px] font-semibold uppercase tracking-[.24em] text-[#dceaa5]">{de ? "Episode" : "Episode"} {episode.number}</span>
                 <h2 className="absolute bottom-7 left-6 max-w-[65%] text-3xl font-semibold italic leading-tight tracking-tight text-white">{episode.title}</h2>
                 <span aria-hidden="true" className="absolute left-[63%] top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/80 bg-[#091b14]/60 text-xl text-white">▶</span>
-                <span className="absolute bottom-4 right-4 rounded-md bg-[#091b14]/75 px-2 py-1 text-xs text-white">{de ? "Video folgt" : "Video pending"}</span>
-              </div>
+                <span className="absolute bottom-4 right-4 rounded-md bg-[#091b14]/75 px-2 py-1 text-xs text-white">{de ? "Auf Instagram ansehen" : "Watch on Instagram"}</span>
+              </a>
               <div className="flex items-start gap-4 p-5">
                 <span className="text-xl text-[#b9d47f]" aria-hidden="true">{icons[episode.category]}</span>
                 <div className="min-w-0 flex-1"><h3 className="font-semibold">{de ? "Episode" : "Episode"} {episode.number} — {episode.title}</h3><p className="mt-2 text-sm leading-relaxed text-[#c7cbb8]">{episode.description}</p></div>
@@ -91,12 +91,12 @@ export function ChallengesGallery({ locale }: { locale: Locale }) {
                 <span className="self-center text-4xl" aria-hidden="true">◇</span>
                 <h2 className="text-3xl font-semibold italic">{de ? "Was kommt als Nächstes?" : "What's Next?"}</h2>
               </div>
-              <div className="p-5"><h3 className="font-semibold">{de ? "Episode 6 — Neue Challenge" : "Episode 6 — New Challenge"}</h3><p className="mt-2 text-sm text-[#c7cbb8]">{de ? "Bald verfügbar." : "Coming soon."}</p></div>
+              <div className="p-5"><h3 className="font-semibold">{de ? "Episode 7 — Neue Challenge" : "Episode 7 — New Challenge"}</h3><p className="mt-2 text-sm text-[#c7cbb8]">{de ? "Bald verfügbar." : "Coming soon."}</p></div>
             </article>
           )}
         </div>
         {filtered.length === 0 && <p className="py-16 text-center text-[#c7cbb8]">{de ? "Noch keine Challenges in dieser Kategorie." : "No challenges in this category yet."}</p>}
-        <p className="mt-8 text-xs text-[#c7cbb8]/70">{de ? "Vorschaubilder und Beschreibungen sind Platzhalter. Originalvideos folgen." : "Preview images and descriptions are placeholders. Original videos will be added later."}</p>
+        <p className="mt-8 text-xs text-[#c7cbb8]/70">{de ? "Vorschaubilder, Titel und Beschreibungen sind Platzhalter. Die Links zu Episoden 1–5 führen zu den Original-Reels." : "Preview images, titles and descriptions are placeholders. Episode links 1–5 open the original Instagram Reels."}</p>
       </section>
     </div>
   );
