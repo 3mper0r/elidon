@@ -10,10 +10,12 @@ type Episode = {
   series?: ChallengeSeries;
   description: Record<Locale, string>;
   image: string;
+  imagePosition?: string;
   url: string;
 };
 
-// Generated illustrations are temporary covers, not photographs from the reels.
+// Covers combine original reel imagery, a licensed Promenade photo, and
+// temporary generated illustrations. See docs/challenges-artwork.md for credits.
 // Editorial copy remains provisional until the final descriptions are supplied.
 export const challengeEpisodes: Episode[] = [
   {
@@ -35,7 +37,8 @@ export const challengeEpisodes: Episode[] = [
       en: "A running challenge along the Promenade.",
       de: "Eine Laufchallenge entlang der Promenade.",
     },
-    image: "/images/challenges/running.webp",
+    image: "/images/challenges/promenade-actual.webp",
+    imagePosition: "center 65%",
     url: "https://www.instagram.com/reel/DepSPFyKwfa/",
   },
   {
@@ -47,7 +50,8 @@ export const challengeEpisodes: Episode[] = [
       en: "Beast Sprung — the fourth challenge in the series.",
       de: "Beast Sprung – die vierte Challenge der Serie.",
     },
-    image: "/images/challenges/canal.webp",
+    image: "/images/challenges/beast-sprung-bridge.webp",
+    imagePosition: "center bottom",
     url: "https://www.instagram.com/reel/DdhBeFTKwNV/",
   },
   {
@@ -68,10 +72,11 @@ export const challengeEpisodes: Episode[] = [
     category: "strength",
     series: "canal",
     description: {
-      en: "A challenge at the pull-up bar.",
-      de: "Eine Challenge an der Klimmzugstange.",
+      en: "Pull-ups on the bridge.",
+      de: "Klimmzüge an der Brücke.",
     },
-    image: "/images/challenges/canal.webp",
+    image: "/images/challenges/der-klimmzug-bridge.webp",
+    imagePosition: "center 30%",
     url: "https://www.instagram.com/reel/DcrGG50KPyS/",
   },
   {

@@ -1,11 +1,36 @@
 # Challenges artwork
 
-Generated with the built-in image generation tool for the gallery design reference. These images are illustrations, not photographs of the actual episodes. The original generated PNGs remain in the generation library; optimized WebP files are served locally from `public/images/challenges/`.
+The gallery combines original reel imagery, a licensed photograph of the real
+Promenade, and generated illustrative covers. Assets are served locally from
+`public/images/challenges/`.
 
 Current card assignments: the city illustration (`promenade.webp`) belongs to
 episode 6, Altstadt Sprint. The swimming illustration belongs to episode 1.
-Episode 5 uses the running illustration; episodes 2–4 use the neutral canal
-illustration as temporary backgrounds while individual covers are reviewed.
+Episode 5 uses the real Promenade photograph below. Episodes 2 and 4 use images
+from their original reels. Episode 3 retains the temporary canal illustration.
+
+## Location photographs
+
+- `promenade-actual.webp`: **Muenster Promenade 5926.jpg**, photograph by
+  **Rüdiger Wölk, Münster**, 5 May 2006. Source:
+  <https://commons.wikimedia.org/wiki/File:Muenster_Promenade_5926.jpg>.
+  Licensed under **CC BY-SA 2.5**:
+  <https://creativecommons.org/licenses/by-sa/2.5/>. Resized to 1000px wide,
+  re-encoded as WebP, and cropped by the cover layout. This version of the photo
+  remains available under the same license. Credit, source, license, and changes
+  are linked from the gallery.
+- `beast-sprung-bridge.webp`: original cover from the user-supplied Beast Sprung
+  reel, <https://www.instagram.com/reel/DdhBeFTKwNV/>. The layout shows the lower
+  bridge area, excluding the cover's baked-in title and play symbol.
+- `der-klimmzug-bridge.webp`: still at 1 second from the user-supplied Der Klimmzug
+  reel, <https://www.instagram.com/reel/DcrGG50KPyS/>, showing the underside of the
+  actual bridge. Re-encoded as WebP; the layout focuses on the bridge and canal.
+
+## Generated illustrations
+
+The remaining artwork was generated with the built-in image generation tool for
+the gallery reference. It does not depict the actual episodes. Original generated
+PNGs remain in the generation library; original prompts are recorded below.
 
 ## Hero
 

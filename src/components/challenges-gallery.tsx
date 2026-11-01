@@ -71,7 +71,7 @@ export function ChallengesGallery({ locale }: { locale: Locale }) {
             <article key={episode.number} className={styles.card}>
               <a href={episode.url} target="_blank" rel="noopener noreferrer" aria-label={de ? `${episode.title} auf Instagram ansehen (öffnet in neuem Tab)` : `Watch ${episode.title} on Instagram (opens in a new tab)`}>
                 <div className={styles.cover} data-episode-cover>
-                  <div className={styles.coverImage} style={{ backgroundImage: `url("${episode.image}")` }} />
+                  <div className={styles.coverImage} style={{ backgroundImage: `url("${episode.image}")`, backgroundPosition: episode.imagePosition }} />
                   <h2 className={styles.coverTitle} data-cover-title>{episode.title}</h2>
                   <span className={styles.play} data-play-control><ChallengeIcon name="play" /></span>
                   <span className={styles.coverCaption} data-cover-caption>Instagram ↗</span>
@@ -101,7 +101,12 @@ export function ChallengesGallery({ locale }: { locale: Locale }) {
           )}
         </div>
         <p role="status" className={filtered.length === 0 ? styles.empty : "sr-only"}>{filtered.length === 0 ? (de ? "Noch keine Challenges in dieser Kategorie." : "No challenges in this category yet.") : (de ? `${filtered.length} Challenges angezeigt.` : `${filtered.length} challenges shown.`)}</p>
-        <p className={styles.note}>{de ? "KI-generierte Illustrationen als vorläufige Cover. Die Originaltitel bleiben in beiden Sprachen erhalten; Beschreibungen sind Entwürfe." : "AI-generated illustrations are temporary covers. Original titles are preserved in both languages; descriptions are drafts."}</p>
+        <p className={styles.note}>
+          {de ? "Promenadenfoto: " : "Promenade photograph: "}
+          <a href="https://commons.wikimedia.org/wiki/File:Muenster_Promenade_5926.jpg" target="_blank" rel="noopener noreferrer" className="underline">Rüdiger Wölk, Münster</a>
+          {" · "}<a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener noreferrer" className="underline">CC BY-SA 2.5</a>
+          {de ? " (verkleinert und als Cover beschnitten). Brückenbilder aus den Original-Reels. Weitere Cover sind vorläufige KI-Illustrationen." : " (resized and cropped for the cover). Bridge images are from the original reels. Other covers are temporary AI illustrations."}
+        </p>
       </section>
     </div>
   );
