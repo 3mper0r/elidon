@@ -9,7 +9,8 @@ const dictionary = {
     "fitness": "Fitness",
     "creative": "Kreatives",
     "about": "Über mich",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "challenges": "Challenges"
   },
   "accessibility": {
     "navigation": "Hauptnavigation",
@@ -19,6 +20,10 @@ const dictionary = {
   },
   "footer": "Softwareentwicklung. Mit klarem Anspruch.",
   "pages": {
+    "challenges": {
+      "heading": "Challenges",
+      "description": "Eine Sammlung sportlicher Videochallenges: Laufen, Radfahren, Schwimmen und Outdoor-Abenteuer."
+    },
     "home": {
       "heading": "Elidon",
       "description": "Erfahrener Softwareentwickler — ausgewählte Projekte, technische Expertise und berufliche Erfahrung."

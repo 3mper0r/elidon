@@ -49,7 +49,11 @@ export function Navigation({ locale, labels, accessibility }: Props) {
             </li>
           );
         })}
-        <li><Link href={`/${locale}/challenges`} onClick={() => setOpenPath(null)} aria-current={pathname === `/${locale}/challenges` ? "page" : undefined} className={`flex min-h-11 items-center rounded px-2 py-3 text-base hover:bg-surface hover:text-foreground lg:px-0 lg:hover:bg-transparent ${pathname === `/${locale}/challenges` ? "text-[#dceaa5]" : "text-secondary"}`}>{locale === "de" ? "Challenges" : "Challenges"}</Link></li>
+        <li>
+          <Link href={localizedPath(locale, "challenges")} onClick={() => setOpenPath(null)} aria-current={pathname === localizedPath(locale, "challenges") ? "page" : undefined} className={`flex min-h-11 items-center rounded px-2 py-3 text-base hover:bg-surface hover:text-foreground lg:px-0 lg:hover:bg-transparent ${pathname === localizedPath(locale, "challenges") ? "text-[#dceaa5]" : "text-secondary"}`}>
+            {labels.challenges}
+          </Link>
+        </li>
         <li className="lg:hidden"><Link href={`${localizedPath(locale)}#contact`} onClick={() => setOpenPath(null)} className="flex min-h-11 items-center px-2 py-3 text-secondary">{labels.contact}</Link></li>
       </ul>
     </nav>
