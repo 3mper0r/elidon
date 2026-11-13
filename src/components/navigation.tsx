@@ -39,7 +39,7 @@ export function Navigation({ locale, labels, accessibility }: Props) {
         {accessibility.menu}
       </button>
       <ul id="primary-navigation" className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full max-h-[75dvh] w-full flex-col gap-1 overflow-y-auto border-b border-secondary/25 bg-background px-6 py-5 shadow-xl sm:px-10 lg:static lg:order-first lg:mx-auto lg:flex lg:max-h-none lg:w-auto lg:flex-row lg:gap-6 lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}>
-        {(["work", "experience", "challenges", "about"] as const).map((page) => {
+        {(["work", "experience", "challenges", "about", "portfolio"] as const).map((page) => {
           const href = page === "challenges" ? localizedPath(locale, page) : `${localizedPath(locale)}#${page}`;
           const current = page === "challenges" && pathname === href;
           return (

@@ -10,7 +10,8 @@ const dictionary = {
     "creative": "Creative",
     "about": "About",
     "contact": "Contact",
-    "challenges": "Challenges"
+    "challenges": "Challenges",
+    "portfolio": "Portfolio"
   },
   "accessibility": {
     "navigation": "Main navigation",

@@ -1,6 +1,6 @@
 import { getHomepageContent } from "@/content/homepage";
 import { getLocale } from "@/lib/i18n/dictionaries";
-import { AboutSection, ContactSection } from "./profile-sections";
+import { AboutSection, ContactSection, PortfolioSection } from "./profile-sections";
 import { EngineeringIcon, HeroArt } from "./hero-art";
 import { Container } from "./container";
 import { EditorialLink } from "./editorial/editorial-link";
@@ -10,7 +10,7 @@ import styles from "./editorial/editorial.module.css";
 
 export async function Homepage({ locale: localeOverride }: { locale?: string | null }) {
   const locale = await getLocale(localeOverride);
-  const { hero, work, expertise, experience, about, contact } = await getHomepageContent(locale);
+  const { hero, work, expertise, experience, about, portfolio, contact } = await getHomepageContent(locale);
   return (
     <>
       <section aria-labelledby="hero-heading" className={styles["hero-section"]}>
@@ -101,6 +101,7 @@ export async function Homepage({ locale: localeOverride }: { locale?: string | n
         </Container>
       </section>
       <AboutSection content={about} />
+      <PortfolioSection content={portfolio} />
       <ContactSection content={contact} />
     </>
   );

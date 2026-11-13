@@ -20,5 +20,10 @@ export type HomepageContent = {
   expertise: ContentSection & { details: { title: string; items: string[] }[] };
   experience: ContentSection & { entries: { title: string; period?: string; description: string; items: string[] }[] };
   about: ContentSection & { availability: string; technologyLabel: string };
+  portfolio: ContentSection & {
+    categoryLabel: string;
+    technologyLabel: string;
+    projects: { id: string; title: string; category: string; description: string; technologies: string; link?: { label: string; href: `/${string}`; newTabLabel: string } }[];
+  };
   contact: { eyebrow: string; heading: string; description: string; link: string; email: string };
 };

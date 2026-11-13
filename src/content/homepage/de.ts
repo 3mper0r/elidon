@@ -160,8 +160,32 @@ const homepage = {
     "availability": "Ich bin offen für Festanstellungen, freiberufliche Projekte und Kooperationen — von konkreten Herausforderungen bis zur gemeinsamen Entwicklung ambitionierter Produkte.",
     "technologyLabel": "Technologien, mit denen ich arbeite"
   },
+  "portfolio": {
+    "eyebrow": "05 / Ausgewähltes Portfolio",
+    "heading": "Produkte, die ich entwickelt habe.\nIdeen, die Wirklichkeit wurden.",
+    "introduction": "Eigenständige Softwareprodukte und Plattformen – von der ersten Idee bis zur funktionierenden Umsetzung.",
+    "categoryLabel": "Kategorie",
+    "technologyLabel": "Technologie",
+    "projects": [
+      {
+        "id": "01",
+        "title": "FRAMEWORK AI",
+        "category": "KI- & Media-Engineering",
+        "description": "Ein lokal ausgerichteter, KI-gestützter Videoeditor, der Bearbeitung in natürlicher Sprache, Timeline-Verwaltung und asynchrone Medienverarbeitung verbindet. Aufgebaut auf zuverlässigem FFmpeg-Rendering und KI-Workflows, die unter menschlicher Kontrolle bleiben.",
+        "technologies": "Next.js · TypeScript · PostgreSQL · Redis · FFmpeg",
+        "link": { "label": "Technische Fallstudie ansehen (PDF)", "href": "/case-studies/FRAMEWORK_AI_Technical_Case_Study_Prototype.pdf", "newTabLabel": "öffnet in neuem Tab" }
+      },
+      {
+        "id": "02",
+        "title": "PROSAFE",
+        "category": "B2B-Plattform",
+        "description": "Eine digitale Plattform für professionelle Schutzausrüstung, die Produktsuche, einen interaktiven PSA-Explorer und B2B-Anfrageprozesse vereint.",
+        "technologies": "Next.js · TypeScript · Interaktiver Produkt-Explorer"
+      }
+    ]
+  },
   "contact": {
-    "eyebrow": "05 / Kontakt",
+    "eyebrow": "06 / Kontakt",
     "heading": "Eine Herausforderung?\nEntwickeln wir die Lösung.",
     "description": "Du suchst einen Fullstack-Entwickler für dein Team oder dein nächstes Projekt? Ich bin in Deutschland ansässig und offen für Festanstellungen, freiberufliche Arbeit und Kooperationen. Schreib mir, was du vorhast.",
     "link": "E-Mail schreiben",

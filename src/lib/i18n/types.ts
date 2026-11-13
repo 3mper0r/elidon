@@ -2,7 +2,7 @@ import type { PillarKey } from "@/content/pillars";
 import type { PageKey } from "./locales";
 
 export type Dictionary = {
-  navigation: Record<PageKey | "work" | "experience", string>;
+  navigation: Record<PageKey | "work" | "experience" | "portfolio", string>;
   accessibility: {
     navigation: string;
     language: string;

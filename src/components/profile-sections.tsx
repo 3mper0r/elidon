@@ -15,6 +15,32 @@ export function AboutSection({ content }: { content: HomepageContent["about"] })
   </section>;
 }
 
+export function PortfolioSection({ content }: { content: HomepageContent["portfolio"] }) {
+  return <section id="portfolio" aria-labelledby="portfolio-heading" className={styles["editorial-section"]}>
+    <Container>
+      <SectionHeading id="portfolio-heading" eyebrow={content.eyebrow} heading={content.heading} description={content.introduction} />
+      <div className={styles["engineering-details"]}>
+        {content.projects.map((project) => (
+          <article key={project.id} aria-labelledby={`portfolio-${project.id}`} className={styles["detail-panel"]}>
+            <p className={styles.eyebrow} aria-hidden="true">{project.id}</p>
+            <h3 id={`portfolio-${project.id}`} className={styles["detail-title"]}>{project.title}</h3>
+            <p className={styles["detail-description"]}>{project.description}</p>
+            <dl className="mt-6 grid gap-4 text-sm leading-relaxed">
+              <div><dt>{content.categoryLabel}</dt><dd className="mt-1 text-secondary">{project.category}</dd></div>
+              <div><dt>{content.technologyLabel}</dt><dd className="mt-1 text-secondary">{project.technologies}</dd></div>
+            </dl>
+            {project.link && <div className="mt-6">
+              <a href={project.link.href} target="_blank" rel="noopener noreferrer" className={styles["editorial-link"]}>
+                <span>{project.link.label}<span className="sr-only"> — {project.title} ({project.link.newTabLabel})</span></span><span className={styles["link-arrow"]} aria-hidden="true">↗</span>
+              </a>
+            </div>}
+          </article>
+        ))}
+      </div>
+    </Container>
+  </section>;
+}
+
 export function ContactSection({ content }: { content: HomepageContent["contact"] }) {
   return <section id="contact" aria-labelledby="contact-heading" className={`${styles["editorial-section"]} ${styles["contact-section"]}`}>
     <Container className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-end">

@@ -160,8 +160,32 @@ const homepage = {
     "availability": "I’m open to full-time roles, freelance projects, and collaborations — from solving a specific challenge to building an ambitious product together.",
     "technologyLabel": "Technologies I work with"
   },
+  "portfolio": {
+    "eyebrow": "05 / Selected portfolio",
+    "heading": "Products I’ve built.\nIdeas brought to life.",
+    "introduction": "Independent software products and platforms, from initial concept to working implementation.",
+    "categoryLabel": "Category",
+    "technologyLabel": "Technology",
+    "projects": [
+      {
+        "id": "01",
+        "title": "FRAMEWORK AI",
+        "category": "AI & Media Engineering",
+        "description": "A local-first AI-assisted video editor combining natural-language editing, timeline management and asynchronous media processing. Built around reliable FFmpeg rendering and human-controlled AI workflows.",
+        "technologies": "Next.js · TypeScript · PostgreSQL · Redis · FFmpeg",
+        "link": { "label": "View Technical Case Study (PDF)", "href": "/case-studies/FRAMEWORK_AI_Technical_Case_Study_Prototype.pdf", "newTabLabel": "opens in a new tab" }
+      },
+      {
+        "id": "02",
+        "title": "PROSAFE",
+        "category": "B2B Platform",
+        "description": "A digital platform for professional safety equipment, combining product discovery, an interactive PPE explorer and B2B inquiry workflows.",
+        "technologies": "Next.js · TypeScript · Interactive Product Explorer"
+      }
+    ]
+  },
   "contact": {
-    "eyebrow": "05 / Get in touch",
+    "eyebrow": "06 / Get in touch",
     "heading": "Have a challenge?\nLet’s build the solution.",
     "description": "Looking for a full stack developer for your team or your next project? I’m based in Germany and open to roles, freelance work, and collaborations. Tell me what you have in mind.",
     "link": "Send me an email",
